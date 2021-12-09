@@ -1,16 +1,14 @@
 #pragma once
 #include "GameObject.h"
 #include "Cards.h"
+#include "Deck.h"
+#include "ErrorCatching.h"
 
-class Dealer: public GameObject
+class Dealer
 {
 public:
 
-	Dealer();
-	virtual void DrawCard();
-	virtual void PrintCurrentCardValue();
-	virtual Cards::Value GetCurrentCardValue();
-
-
+	Dealer() {};
+	void DrawCard(Deck& deck);
 };
 

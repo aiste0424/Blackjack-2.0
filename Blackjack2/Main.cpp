@@ -1,24 +1,30 @@
 #include "Start.h"
-#include "Play.h"
 #include <iostream>
+#include "Player.h"
+#include "Dealer.h"
+#include "Deck.h"
 
 int main()
 {
 	Start m_start;
-	Play m_play;
+	Dealer m_dealer;
+	Player m_player;
+	Deck m_deck;
+
+	
 	bool isGameRunning = true;
 
 	m_start.Introduction();
 
 	while (isGameRunning)
 	{
-		
-		m_play.DrawCard();
-		m_play.PrintCurrentCardValue();
-		m_play.PrintCurrentCardType();
-		m_play.PrintPicture();
+		m_player.DrawCard(m_deck);
+		system("pause");
+		m_dealer.DrawCard(m_deck);
+		system("pause");
+		//system("CLS");
 	}
 	
-	system("pause");
+	
 	return 0;
 }

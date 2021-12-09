@@ -7,10 +7,16 @@ class Deck
 public:
 
 	Deck();
+	void SetRandomType();
+	void SetRandomValue();
 	void PrintPicture();
 	void PrintCurrentCardType();
 	void PrintCurrentCardValue();
+
 	Cards::Value GetCurrentCardValue();
+	Cards::Type GetCurrentCardType();
+
+	void CardTaken();
 
 private:
 
@@ -19,8 +25,8 @@ private:
 	int m_randomType;
 	int m_randomValue;
 
-	const int m_deckHeight = 4;
-	const int m_deckWidth = 13;
+	const int m_typeNumber = 4;
+	const int m_valueNumber = 13;
 
 	Cards   m_twoClubs, m_threeClubs, m_fourClubs, m_fiveClubs, m_sixClubs,
 			m_sevenClubs, m_eightClubs, m_nineClubs, m_tenClubs, m_jackClubs,

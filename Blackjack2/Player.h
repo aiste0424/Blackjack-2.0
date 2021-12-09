@@ -1,15 +1,12 @@
 #pragma once
 #include "GameObject.h"
+#include "Deck.h"
 
-class Player : public GameObject
+class Player
 {
 public:
 
-	Player();
-	virtual void DrawCard();
-	virtual void PrintCurrentCardValue();
-	virtual Cards::Value GetCurrentCardValue();
-
-
+	Player() {};
+	void DrawCard(Deck& deck);
 };
 

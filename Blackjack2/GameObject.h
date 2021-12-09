@@ -4,6 +4,6 @@ class GameObject
 {
 public:
 
-	virtual void DrawCard() = 0;
+	virtual void DrawCard();
 };
 

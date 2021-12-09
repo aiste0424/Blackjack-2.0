@@ -1,18 +1,17 @@
 #include "Player.h"
+#include <iostream>
 
-Player::Player()
+void Player::DrawCard(Deck& deck)
 {
-}
+    //gives random number
+    deck.SetRandomType();
+    deck.SetRandomValue();
 
-void Player::DrawCard()
-{
-}
-
-void Player::PrintCurrentCardValue()
-{
-}
-
-Cards::Value Player::GetCurrentCardValue()
-{
-    return Cards::Value();
+    std::cout << "\nYou got ";
+    
+    //checking if the card has been taken
+    deck.CardTaken();
+    deck.PrintCurrentCardValue();
+    deck.PrintCurrentCardType();
+    deck.PrintPicture();
 }

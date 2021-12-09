@@ -16,8 +16,19 @@ Deck::Deck()
         {
             m_deck[i][j]->SetType(static_cast<Cards::Type>(i));
             m_deck[i][j]->SetValue(static_cast<Cards::Value>(j + 2));
+			m_deck[i][j]->SetIsTaken(false);
         }
     }
+}
+
+void Deck::SetRandomType()
+{
+	m_randomType = rand() % m_typeNumber;
+}
+
+void Deck::SetRandomValue()
+{
+	m_randomValue = rand() % m_valueNumber + 2;
 }
 
 void Deck::PrintPicture()
@@ -107,4 +118,25 @@ void Deck::PrintCurrentCardValue()
 Cards::Value Deck::GetCurrentCardValue()
 {
 	return static_cast<Cards::Value>(m_randomValue);
+}
+
+Cards::Type Deck::GetCurrentCardType()
+{
+	return static_cast<Cards::Type>(m_randomValue);
+}
+
+void Deck::CardTaken()
+{
+	int i = 0;
+	std::cout << "\n\n";
+	//std::cout << static_cast<int>(m_deck[m_randomType][m_randomValue]->GetType());
+	std::cout << "\n\n";
+	while (m_deck[m_randomType][m_randomValue]->GetIsTaken())
+	{
+		i++;
+		std::cout << "The function has been done " << i << " times\n";
+		m_randomType = rand() % m_typeNumber;
+		m_randomValue = rand() % m_valueNumber + 2;
+	}
+	m_deck[m_randomType][m_randomValue]->SetIsTaken(true);
 }

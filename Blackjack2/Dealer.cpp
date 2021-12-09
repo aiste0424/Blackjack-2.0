@@ -1,18 +1,19 @@
 #include "Dealer.h"
+#include "Deck.h"
+#include <iostream>
 
-Dealer::Dealer()
+void Dealer::DrawCard(Deck& deck)
 {
-}
+	//gives random number
+    deck.SetRandomType();
+    deck.SetRandomValue();
 
-void Dealer::DrawCard()
-{
-}
+    std::cout << "The dealer got ";
 
-void Dealer::PrintCurrentCardValue()
-{
-}
-
-Cards::Value Dealer::GetCurrentCardValue()
-{
-	return Cards::Value();
+	//checking if the card has been taken
+    
+    deck.CardTaken();
+    deck.PrintCurrentCardValue();
+    deck.PrintCurrentCardType();
+    deck.PrintPicture();
 }

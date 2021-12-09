@@ -31,10 +31,12 @@ public:
 	};
 
 	Cards();
-	bool GetIsTaken();
-	void SetIsTaken(bool isTaken);
 	void SetType(Type type);
 	void SetValue(Value value);
+	bool GetIsTaken();
+	void SetIsTaken(bool taken);
+
+	Type GetType();
 
 private:
 
