@@ -14,9 +14,8 @@ int main()
 	{
 		
 		m_play.DrawCard();
-		m_play.CheckCardValue();
-		m_play.PrintCardValue();
-		m_play.PrintCardType();
+		m_play.PrintCurrentCardValue();
+		m_play.PrintCurrentCardType();
 		m_play.PrintPicture();
 	}
 	

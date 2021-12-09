@@ -19,35 +19,83 @@
     <Filter Include="Header Files\Game States">
       <UniqueIdentifier>{86630582-97b0-4937-9373-dcd777c12fca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{726b8f2a-a661-4487-a380-9d84e96ce747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{bb3932d6-c9b1-4310-8467-0b4fb2a868d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extras">
+      <UniqueIdentifier>{5aa35c7d-a087-4e65-9360-fd03208ba94d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extras">
+      <UniqueIdentifier>{248d304b-54c7-41df-89d0-fe6e7dae5376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects">
+      <UniqueIdentifier>{45ed0e56-cc3b-4362-82c3-78a142ec6d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game Objects">
+      <UniqueIdentifier>{cc34bb13-c8a3-46e6-89b8-3f6913d5f702}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cards.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Play.cpp">
       <Filter>Source Files\Game States</Filter>
     </ClCompile>
     <ClCompile Include="Start.cpp">
       <Filter>Source Files\Game States</Filter>
     </ClCompile>
+    <ClCompile Include="Cards.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
     <ClCompile Include="ErrorCatching.cpp">
+      <Filter>Source Files\Extras</Filter>
+    </ClCompile>
+    <ClCompile Include="Dealer.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Deck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Cards.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Play.h">
       <Filter>Header Files\Game States</Filter>
     </ClInclude>
     <ClInclude Include="Start.h">
       <Filter>Header Files\Game States</Filter>
     </ClInclude>
+    <ClInclude Include="Cards.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
     <ClInclude Include="ErrorCatching.h">
+      <Filter>Header Files\Extras</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Dealer.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Deck.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -79,37 +79,6 @@ void Play::PrintPicture()
 	std::cout << "|__________|" << std::endl;
 }
 
-void Play::CheckCurrentCardValue()
-{
-
-	switch (static_cast<Cards::Value>(m_randomValue))
-	{
-	case Cards::Value::Jack:
-	{
-		symbol = "J";
-		break;
-	}
-	case Cards::Value::Queen:
-	{
-		symbol = "Q";
-		break;
-	}
-	case Cards::Value::King:
-	{
-		symbol = "K";
-		break;
-	}
-	case Cards::Value::Ace:
-	{
-		symbol = "A";
-		break;
-	}
-	default:
-		symbol = std::to_string(m_randomValue);
-		break;
-	}
-}
-
 void Play::PrintCurrentCardType()
 {
 
@@ -133,27 +102,37 @@ void Play::PrintCurrentCardType()
 	}
 }
 
+Cards::Value Play::GetCurrentCardValue()
+{
+	return static_cast<Cards::Value>(m_randomValue);
+}
+
 void Play::PrintCurrentCardValue()
 {
 	switch (static_cast<Cards::Value>(m_randomValue))
 	{
 	case Cards::Value::Jack:
+		symbol = "J";
 		std::cout << "Jack";
 		break;
 
 	case Cards::Value::Queen:
+		symbol = "Q";
 		std::cout << "Queen";
 		break;
 
 	case Cards::Value::King:
+		symbol = "K";
 		std::cout << "King";
 		break;
 
 	case Cards::Value::Ace:
+		symbol = "A";
 		std::cout << "Ace";
 		break;
 
 	default:
+		symbol = std::to_string(m_randomValue);
 		std::cout << static_cast<int>(m_randomValue);
 		break;
 	}

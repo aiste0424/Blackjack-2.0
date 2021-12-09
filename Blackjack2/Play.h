@@ -11,9 +11,9 @@ public:
     void DrawCard();
 
     void PrintPicture();
-    void CheckCurrentCardValue();
 
     void PrintCurrentCardType();
+    Cards::Value GetCurrentCardValue();
     void PrintCurrentCardValue();
 
 private:
