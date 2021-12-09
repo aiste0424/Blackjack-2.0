@@ -15,6 +15,8 @@ int main()
 		
 		m_play.DrawCard();
 		m_play.CheckCardValue();
+		m_play.PrintCardValue();
+		m_play.PrintCardType();
 		m_play.PrintPicture();
 	}
 	

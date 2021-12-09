@@ -9,13 +9,16 @@ public:
 
 	Play();
     void DrawCard();
+
     void PrintPicture();
-    void CheckCardValue();
+    void CheckCurrentCardValue();
+
+    void PrintCurrentCardType();
+    void PrintCurrentCardValue();
 
 private:
 
     std::string symbol;
-
     ErrorCatching m_error;
 
     int m_randomType;
@@ -25,7 +28,6 @@ private:
     const int m_valueNumber = 13;
 
     int m_newCard;
-    Cards::Value m_value;
 
     Cards   twoClubs, threeClubs, fourClubs, fiveClubs, sixClubs, sevenClubs,
             eightClubs, nineClubs, tenClubs, jackClubs, queenClubs, kingClubs, aceClubs;

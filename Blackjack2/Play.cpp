@@ -14,7 +14,6 @@ Play::Play()
     m_newCard = 0;
     m_randomType = 0;
     m_randomValue = 0;
-	m_value = static_cast<Cards::Value>(0);
 
     for (int i = 0; i < 4; i++)
     {
@@ -29,7 +28,7 @@ Play::Play()
 void Play::DrawCard()
 {
 	//gives random number
-    m_randomType = rand() % m_typeNumber + 1;
+    m_randomType = rand() % m_typeNumber;
     m_randomValue = rand() % m_valueNumber + 2;
 
 	//asking for input
@@ -42,7 +41,7 @@ void Play::DrawCard()
     while (deck[m_randomType][m_randomValue].GetIsTaken() == true)
     {
 		//while yes, give a new number
-        m_randomType = rand() % m_typeNumber + 1;
+        m_randomType = rand() % m_typeNumber;
         m_randomValue = rand() % m_valueNumber + 2;
     }
 	//sets the card to TAKEN after being used to avoid getting the same cards
@@ -51,8 +50,7 @@ void Play::DrawCard()
 
 void Play::PrintPicture()
 {
-	
-	std::cout << "____________" << std::endl;
+	std::cout << "\n____________" << std::endl;
 	std::cout << "|          |" << std::endl;
 	std::cout << "| " << symbol;
 	//one space difference to make the card ASCII art look neat
@@ -81,11 +79,10 @@ void Play::PrintPicture()
 	std::cout << "|__________|" << std::endl;
 }
 
-void Play::CheckCardValue()
+void Play::CheckCurrentCardValue()
 {
-	m_value = static_cast<Cards::Value>(m_randomValue);
 
-	switch (m_value)
+	switch (static_cast<Cards::Value>(m_randomValue))
 	{
 	case Cards::Value::Jack:
 	{
@@ -109,6 +106,55 @@ void Play::CheckCardValue()
 	}
 	default:
 		symbol = std::to_string(m_randomValue);
+		break;
+	}
+}
+
+void Play::PrintCurrentCardType()
+{
+
+	switch (static_cast<Cards::Type>(m_randomType))
+	{
+	case Cards::Type::Clubs:
+		std::cout << " of Clubs";
+		break;
+
+	case Cards::Type::Diamonds:
+		std::cout << " of Diamonds";
+		break;
+
+	case Cards::Type::Hearts:
+		std::cout << " of Hearts";
+		break;
+
+	case Cards::Type::Spades:
+		std::cout << " of Spades";
+		break;
+	}
+}
+
+void Play::PrintCurrentCardValue()
+{
+	switch (static_cast<Cards::Value>(m_randomValue))
+	{
+	case Cards::Value::Jack:
+		std::cout << "Jack";
+		break;
+
+	case Cards::Value::Queen:
+		std::cout << "Queen";
+		break;
+
+	case Cards::Value::King:
+		std::cout << "King";
+		break;
+
+	case Cards::Value::Ace:
+		std::cout << "Ace";
+		break;
+
+	default:
+		std::cout << static_cast<int>(m_randomValue);
 		break;
 	}
 }
