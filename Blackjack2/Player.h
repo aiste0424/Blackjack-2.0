@@ -7,6 +7,6 @@ class Player
 public:
 
 	Player() {};
-	void DrawCard(Deck& deck);
+	void DrawCard(Deck deck);
 };
 

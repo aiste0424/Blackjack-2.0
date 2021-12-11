@@ -6,7 +6,6 @@
 Deck::Deck()
 {
     srand(time(0));
-
 	m_randomType = 0;
 	m_randomValue = 0;
 
@@ -14,9 +13,9 @@ Deck::Deck()
     {
         for (int j = 0; j < 13; j++)
         {
-            m_deck[i][j]->SetType(static_cast<Cards::Type>(i));
-            m_deck[i][j]->SetValue(static_cast<Cards::Value>(j + 2));
-			m_deck[i][j]->SetIsTaken(false);
+            m_deck[i][j].SetType(static_cast<Cards::Type>(i));
+            m_deck[i][j].SetValue(static_cast<Cards::Value>(j + 2));
+			m_deck[i][j].SetIsTaken(false);
         }
     }
 }
@@ -127,16 +126,10 @@ Cards::Type Deck::GetCurrentCardType()
 
 void Deck::CardTaken()
 {
-	int i = 0;
-	std::cout << "\n\n";
-	//std::cout << static_cast<int>(m_deck[m_randomType][m_randomValue]->GetType());
-	std::cout << "\n\n";
-	while (m_deck[m_randomType][m_randomValue]->GetIsTaken())
+	while (m_deck[m_randomType][m_randomValue].GetIsTaken() == true)
 	{
-		i++;
-		std::cout << "The function has been done " << i << " times\n";
 		m_randomType = rand() % m_typeNumber;
 		m_randomValue = rand() % m_valueNumber + 2;
 	}
-	m_deck[m_randomType][m_randomValue]->SetIsTaken(true);
+	m_deck[m_randomType][m_randomValue].SetIsTaken(true);
 }

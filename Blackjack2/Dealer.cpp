@@ -2,7 +2,7 @@
 #include "Deck.h"
 #include <iostream>
 
-void Dealer::DrawCard(Deck& deck)
+void Dealer::DrawCard(Deck deck)
 {
 	//gives random number
     deck.SetRandomType();

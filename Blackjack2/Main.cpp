@@ -10,7 +10,6 @@ int main()
 	Dealer m_dealer;
 	Player m_player;
 	Deck m_deck;
-
 	
 	bool isGameRunning = true;
 

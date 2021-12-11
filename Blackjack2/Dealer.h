@@ -9,6 +9,6 @@ class Dealer
 public:
 
 	Dealer() {};
-	void DrawCard(Deck& deck);
+	void DrawCard(Deck deck);
 };
 

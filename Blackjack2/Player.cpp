@@ -1,7 +1,7 @@
 #include "Player.h"
 #include <iostream>
 
-void Player::DrawCard(Deck& deck)
+void Player::DrawCard(Deck deck)
 {
     //gives random number
     deck.SetRandomType();
