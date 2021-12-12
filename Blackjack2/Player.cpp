@@ -6,10 +6,9 @@ void Player::DrawCard(Deck deck, Score score)
     //gives random number
     deck.SetRandomType();
     deck.SetRandomValue();
-    score.SetScore();
+    score.SetScore(0);
 
     std::cout << "\nYou got "; 
-    std::cout << "Your current score is " << score.AddScore() << std::endl;
     
     //checking if the card has been taken
     deck.CardTaken();
@@ -17,4 +16,7 @@ void Player::DrawCard(Deck deck, Score score)
     deck.PrintCurrentCardType();
     deck.PrintPicture();
     score.AddScore();  //Gergo added score here
+
+    std::cout << "Your current score is " << score.AddScore() << std::endl;
+
 }

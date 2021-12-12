@@ -11,7 +11,8 @@ int main()
 	Dealer m_dealer;
 	Player m_player;
 	Deck m_deck;
-	Score score;
+	Score m_score;
+	m_score.AddScore();
 	
 	bool isGameRunning = true;
 
@@ -19,7 +20,7 @@ int main()
 
 	while (isGameRunning)
 	{
-		m_player.DrawCard(m_deck, score);
+		m_player.DrawCard(m_deck, m_score);
 		system("pause");
 		m_dealer.DrawCard(m_deck);
 		system("pause");

@@ -1,8 +1,11 @@
 #include "Score.h"
 
-int Score::SetScore()
+int Score::SetScore(int score)
 {
+    m_score = score;
     m_score = 0;
+    m_newScore = 0;
+    
     return m_score;
 }
 
@@ -13,18 +16,7 @@ int Score::AddScore()
     return m_newScore;
 }
 
-int Score::GetValue(Cards::Value)
+Cards::Value Score::GetValue()
 {
-    return m_value;
+    return static_cast<Cards::Value>(m_value);
 }
-
-//int Score::GetScore()
-//{
-//    return m_newScore;
-//}
-
-//int Score::NewScore(Cards::Value& newScore)
-//{
-//    return m_newScore;
-//}
-
