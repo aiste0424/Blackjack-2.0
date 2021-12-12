@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Dealer.h"
 #include "Deck.h"
+#include "Score.h"
 
 int main()
 {
@@ -10,6 +11,7 @@ int main()
 	Dealer m_dealer;
 	Player m_player;
 	Deck m_deck;
+	Score score;
 	
 	bool isGameRunning = true;
 
@@ -17,7 +19,7 @@ int main()
 
 	while (isGameRunning)
 	{
-		m_player.DrawCard(m_deck);
+		m_player.DrawCard(m_deck, score);
 		system("pause");
 		m_dealer.DrawCard(m_deck);
 		system("pause");

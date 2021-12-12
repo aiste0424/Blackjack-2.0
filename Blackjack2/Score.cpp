@@ -8,21 +8,23 @@ int Score::SetScore()
 
 int Score::AddScore()
 {
-    m_newScore = m_value + m_score;
+    m_newScore = m_score + m_value;
+    
     return m_newScore;
 }
 
-int Score::GetScore()
+int Score::GetValue(Cards::Value)
 {
-    return m_newScore;
+    return m_value;
 }
 
-int Score::NewScore(int newScore)
-{
-    return m_newScore;
-}
+//int Score::GetScore()
+//{
+//    return m_newScore;
+//}
 
-Cards::Value Score::GetValue(int value)
-{
-    return Cards::Value();
-}
+//int Score::NewScore(Cards::Value& newScore)
+//{
+//    return m_newScore;
+//}
+

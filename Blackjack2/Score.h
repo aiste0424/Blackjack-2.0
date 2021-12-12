@@ -8,10 +8,9 @@ public:
 	int SetScore();
 	int AddScore();
 
-	int GetScore();
-	int NewScore(int newScore);
-
-	Cards::Value GetValue(int value);
+	//int GetScore();
+	//int NewScore(Cards::Value& newScore);
+	int GetValue(Cards::Value);
 
 private:
 
