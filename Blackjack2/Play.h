@@ -9,6 +9,7 @@ public:
 
 	Play();
     void DrawCard();
+    void CountScore();
 
     void PrintPicture();
 

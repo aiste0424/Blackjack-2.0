@@ -38,6 +38,8 @@ public:
 
 	Type GetType();
 
+	void convert();
+
 private:
 
 	bool m_isTaken;

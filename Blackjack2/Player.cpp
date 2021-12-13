@@ -1,12 +1,11 @@
 #include "Player.h"
 #include <iostream>
 
-void Player::DrawCard(Deck deck, Score score)
+void Player::DrawCard(Deck deck)
 {
     //gives random number
     deck.SetRandomType();
     deck.SetRandomValue();
-    score.SetScore(0);
 
     std::cout << "\nYou got "; 
     
@@ -14,9 +13,11 @@ void Player::DrawCard(Deck deck, Score score)
     deck.CardTaken();
     deck.PrintCurrentCardValue();
     deck.PrintCurrentCardType();
-    deck.PrintPicture();
-    score.AddScore();  //Gergo added score here
-
-    std::cout << "Your current score is " << score.AddScore() << std::endl;
-
+    deck.PrintPicture();   
 }
+
+void Player::CountScore(Score score)
+{
+    std::cout<< "Your current score is : "<< score.AddScore() << std::endl;
+}
+

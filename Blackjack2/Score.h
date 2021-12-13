@@ -6,9 +6,11 @@ class Score
 public:
 
 	int SetScore(int score);
+	
 	int AddScore();
 
 	Cards::Value GetValue();
+
 
 private:
 

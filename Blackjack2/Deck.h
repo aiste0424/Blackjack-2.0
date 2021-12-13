@@ -16,6 +16,7 @@ public:
 	Cards::Value GetCurrentCardValue();
 	Cards::Type GetCurrentCardType();
 
+
 	void CardTaken();
 
 private:
