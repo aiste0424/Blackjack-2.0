@@ -13,6 +13,8 @@ public:
 	void SetScore(int score);
 	void UpdateScore();
 
+	void Switch();
+	void UpdateSwitch();
 
 	Cards::Value GetValue();
 	Cards::Value GetCurrentCardValue();
