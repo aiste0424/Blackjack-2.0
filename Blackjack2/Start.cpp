@@ -6,7 +6,7 @@ Start::Start()
     m_start = 0;
 }
 
-void Start::Introduction()
+void Start::ShowIntroduction()
 {
     std::cout << "|==========================================|\n";
     std::cout << "|Welcome to blackjack. Will you win against| \n|me or lose? Only one way to find out...   |";

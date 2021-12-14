@@ -1,33 +1,36 @@
 #include "Deck.h"
 #include <time.h>
-#include <iostream>
 #include <string>
+#include <iostream>
 
 Deck::Deck()
 {
     srand(time(0));
-	m_randomType = 0;
-	m_randomValue = 0;
+	m_randomSuit = 0;
+	m_randomRank = 0;
 
-    for (int i = 0; i < 4; i++)
+	//initializing the correct card suits, ranks and values
+    for (int i = 0; i < m_suitNumber; i++)
     {
-        for (int j = 0; j < 13; j++)
+        for (int j = 0; j < m_rankNumber; j++)
         {
-            m_deck[i][j].SetType(static_cast<Cards::Type>(i));
-			//if card above value 10
-			if ((j+2) > static_cast<int>(Cards::Value::Ten))
+            m_deck[i][j].SetSuit(static_cast<Cards::Suit>(i));
+			m_deck[i][j].SetRank(static_cast<Cards::Rank>(j+2));
+
+			//if card above rank 10
+			if ((j+2) > static_cast<int>(Cards::Rank::Ten) && (j+2) != static_cast<int>(Cards::Rank::Ace))
 			{
-				m_deck[i][j].SetValue(Cards::Value::Ten);
+				m_deck[i][j].SetValue(static_cast<int>(Cards::Rank::Ten));
 			}
-			//ace default value is 1
-			else if (j == 12)
+			//ace default value is 11
+			else if (j == static_cast<int>(Cards::Rank::Queen))
 			{
-				m_deck[i][j].SetValue(Cards::Value::Ace);
+				m_deck[i][j].SetValue(static_cast<int>(Cards::Rank::Jack));
 			}
 			//the rest values
 			else
 			{
-				m_deck[i][j].SetValue(static_cast<Cards::Value>(j+1));
+				m_deck[i][j].SetValue((j+2));
 			}
 			m_deck[i][j].SetIsTaken(false);
         }
@@ -35,14 +38,15 @@ Deck::Deck()
 	std::cout << "Initializing Deck: successful\n";
 }
 
-void Deck::SetRandomType()
+//random position in the deck
+void Deck::SetRandomSuit()
 {
-	m_randomType = rand() % m_typeNumber;
+	m_randomSuit = rand() % m_suitNumber;
 }
 
-void Deck::SetRandomValue()
+void Deck::SetRandomRank()
 {
-	m_randomValue = rand() % m_valueNumber + 2;
+	m_randomRank = rand() % m_rankNumber + 2;
 }
 
 void Deck::PrintPicture()
@@ -75,80 +79,80 @@ void Deck::PrintPicture()
 	}
 	std::cout << "|__________|" << std::endl;
 }
-
-void Deck::PrintCurrentCardType()
+//restarting the game
+void Deck::ResetCards()
 {
-	switch (static_cast<Cards::Type>(m_randomType))
+	for (int i = 0; i < m_suitNumber; i++)
 	{
-	case Cards::Type::Clubs:
+		for (int j = 0; j < m_rankNumber; j++)
+		{
+			m_deck[i][j].SetIsTaken(false);
+		}
+	}
+}
+
+void Deck::PrintCurrentCardSuit()
+{
+	switch (static_cast<Cards::Suit>(m_randomSuit))
+	{
+	case Cards::Suit::Clubs:
 		std::cout << " of Clubs";
 		break;
 
-	case Cards::Type::Diamonds:
+	case Cards::Suit::Diamonds:
 		std::cout << " of Diamonds";
 		break;
 
-	case Cards::Type::Hearts:
+	case Cards::Suit::Hearts:
 		std::cout << " of Hearts";
 		break;
 
-	case Cards::Type::Spades:
+	case Cards::Suit::Spades:
 		std::cout << " of Spades";
 		break;
 	}
 }
 
-void Deck::PrintCurrentCardValue()
+//prints the current value 
+void Deck::PrintCurrentCardRank()
 {
-	switch (static_cast<Cards::Value>(m_randomValue))
+	switch (static_cast<Cards::Rank>(m_randomRank))
 	{
-	case Cards::Value::Jack:
+	case Cards::Rank::Jack:
 		m_symbol = "J";
 		std::cout << "Jack";
 		break;
 
-	case Cards::Value::Queen:
+	case Cards::Rank::Queen:
 		m_symbol = "Q";
 		std::cout << "Queen";
 		break;
 
-	case Cards::Value::King:
+	case Cards::Rank::King:
 		m_symbol = "K";
 		std::cout << "King";
 		break;
-	//TODO: prints 14 instead of A
-	case Cards::Value::Ace:
+	
+	case Cards::Rank::Ace:
 		m_symbol = "A";
 		std::cout << "Ace";
 		break;
 
 	default:
-		m_symbol = std::to_string(m_randomValue);
-		std::cout << static_cast<int>(m_randomValue);
+		m_symbol = std::to_string(m_randomRank);
+		std::cout << static_cast<int>(m_randomRank);
 		break;
 	}
 }
 
-void Deck::AceValue()
-{
-}
-
-Cards::Value Deck::GetCurrentCardValue()
-{
-	return static_cast<Cards::Value>(m_randomValue);
-}
-
-Cards::Type Deck::GetCurrentCardType()
-{
-	return static_cast<Cards::Type>(m_randomValue);
-}
-
 void Deck::CardTaken()
 {
-	while (m_deck[m_randomType][m_randomValue].GetIsTaken() == true)
+	//while the card is taken, give another card
+	while (m_deck[m_randomSuit][m_randomRank].GetIsTaken() == true)
 	{
-		m_randomType = rand() % m_typeNumber;
-		m_randomValue = rand() % m_valueNumber + 2;
+		m_randomSuit = rand() % m_suitNumber;
+		m_randomRank = rand() % m_rankNumber + 2;
 	}
-	m_deck[m_randomType][m_randomValue].SetIsTaken(true);
+	//if the card is picked, set to 'taken'
+	m_deck[m_randomSuit][m_randomRank].SetIsTaken(true);
 }

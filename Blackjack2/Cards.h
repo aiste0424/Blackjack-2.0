@@ -4,7 +4,7 @@ class Cards
 {
 public:
 
-	enum class Type
+	enum class Suit
 	{
 		//the allignment is the same as in the deck[][] matrix. DO NOT TOUCH
 		Clubs,
@@ -13,7 +13,7 @@ public:
 		Diamonds
 	};
 
-	enum class Value
+	enum class Rank
 	{
 		Two = 2,
 		Three,
@@ -29,20 +29,25 @@ public:
 		King,
 		Ace
 	};
+	//suit - one of the four
+	//rank - what the card is
+	//value - how much it is worth
 
 	Cards();
-	void SetType(Type type);
-	void SetValue(Value value);
-	bool GetIsTaken();
-	void SetIsTaken(bool taken);
+	void SetSuit(Suit suit);
+	void SetRank(Rank rank);
 
-	Type GetType();
-	Value GetValue();
+	void SetValue(int value);
+	void SetIsTaken(bool taken);
+	int GetValue();
+
+	bool GetIsTaken();
 
 private:
 
+	Suit m_suit;
+	Rank m_rank;
+	int m_value;
 	bool m_isTaken;
-	Type m_type;
-	Value m_value;
 };
 

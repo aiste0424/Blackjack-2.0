@@ -3,7 +3,8 @@
 Score::Score()
 {
     m_newScore = 0;
-    m_score = 0;
+    m_previousScore = 0;
+    m_value = 0;
 }
 
 int Score::GetScore()
@@ -13,15 +14,15 @@ int Score::GetScore()
 
 void Score::AddScore()
 {
-    m_newScore = m_score + m_value;
+    m_newScore = m_previousScore + m_value;
 }
 
 void Score::SetScore(int score)
 {
-    m_score = score;
+    m_newScore = score;
 }
 
-Cards::Value Score::GetValue()
+int Score::GetValue()
 {
-    return static_cast<Cards::Value>(m_value);
+    return m_value;
 }

@@ -1,8 +1,11 @@
 #include "Play.h"
 #include <iostream>
 
-void Play::TheBeginning()
+//dealer deals 1 card to the player, one to himself,
+//one to the player and one to himself. The secondcard that the dealer got is face down.
+void Play::TheDeal()
 {
+    //one card to player, then dealer, then player again
     m_player.DrawCard(m_deck);
     m_deck.CardTaken();
     system("pause");
@@ -10,5 +13,4 @@ void Play::TheBeginning()
     m_dealer.DrawCard(m_deck);
     m_deck.CardTaken();
     system("pause");
-    system("CLS");
 }

@@ -6,7 +6,7 @@ class Start
 public:
 
 	Start();
-	void Introduction();
+	void ShowIntroduction();
 
 private:
 

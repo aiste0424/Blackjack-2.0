@@ -9,12 +9,12 @@ public:
 	int GetScore();
 	void AddScore();
 	void SetScore(int score);
-	Cards::Value GetValue();
+	int GetValue();
 
 
 private:
 
-	int m_score;
+	int m_previousScore;
 	int m_newScore;
 	int m_value;
 

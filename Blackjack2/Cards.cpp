@@ -3,36 +3,37 @@
 Cards::Cards()
 {
     m_isTaken = false;
-    m_type = static_cast<Type>(0);
-    m_value = static_cast<Value>(0);
+    m_suit = static_cast<Suit>(0);
+    m_rank = static_cast<Rank>(0);
+    m_value = 0;
 }
 
-void Cards::SetType(Type type)
+//=================Used in Deck.h constructor
+void Cards::SetSuit(Suit suit)
 {
-    m_type = type;
+    m_suit = suit;
+}
+void Cards::SetRank(Rank rank)
+{
+    m_rank = rank;
 }
 
-void Cards::SetValue(Value value)
+void Cards::SetValue(int value)
 {
     m_value = value;
 }
-
-bool Cards::GetIsTaken()
-{
-    return m_isTaken;
-}
-
+//==================
 void Cards::SetIsTaken(bool taken)
 {
     m_isTaken = taken;
 }
 
-Cards::Type Cards::GetType()
-{
-    return m_type;
-}
-
-Cards::Value Cards::GetValue()
+int Cards::GetValue()
 {
     return m_value;
+}
+
+bool Cards::GetIsTaken()
+{
+    return m_isTaken;
 }

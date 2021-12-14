@@ -1,21 +1,21 @@
 #pragma once
-
 #include <string>
-#include "ErrorCatching.h"
+#include "Deck.h"
 #include "Dealer.h"
 #include "Player.h"
-#include "Deck.h"
+#include "ErrorCatching.h"
 
 class Play
 {
 public:
 
-    //both player and the dealer get two cards at the start
-    void TheBeginning();
+    //player gets two cards, dealer gets 1
+    void TheDeal();
 
 private:
 
+    Deck m_deck;
     Dealer m_dealer;
     Player m_player;
-    Deck m_deck;
+    ErrorCatching m_error;
 };

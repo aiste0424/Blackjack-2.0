@@ -1,18 +1,15 @@
 #include "Dealer.h"
-#include "Deck.h"
 #include <iostream>
 
 void Dealer::DrawCard(Deck deck)
 {
 	//gives random number
-    deck.SetRandomType();
-    deck.SetRandomValue();
+    deck.SetRandomSuit();
+    deck.SetRandomRank();
     
     std::cout << "The dealer got ";
 
-    //TODO: CardTaken() doesn't work here, but works in main
-    //deck.CardTaken();
-    deck.PrintCurrentCardValue();
-    deck.PrintCurrentCardType();
+    deck.PrintCurrentCardRank();
+    deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 }

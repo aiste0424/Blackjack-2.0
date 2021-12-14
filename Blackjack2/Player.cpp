@@ -4,20 +4,14 @@
 void Player::DrawCard(Deck deck)
 {
     //gives random number
-    deck.SetRandomType();
-    deck.SetRandomValue();
+    deck.SetRandomSuit();
+    deck.SetRandomRank();
 
     std::cout << "\nYou got "; 
     
-    //TODO: CardTaken() doesn't work here, but works in main
-    //deck.CardTaken();
-    deck.PrintCurrentCardValue();
-    deck.PrintCurrentCardType();
+    deck.PrintCurrentCardRank();
+    deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 }
 
-void Player::PrintScore()
-{
-    std::cout << "Your current score is : " << m_score.GetScore() << std::endl;
-}
 
