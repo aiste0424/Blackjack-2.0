@@ -9,8 +9,8 @@ void Player::DrawCard(Deck deck)
 
     std::cout << "\nYou got ";
     
-    //checking if the card has been taken
-    deck.CardTaken();
+    //TODO: CardTaken() doesn't work here, but works in main
+    //deck.CardTaken();
     deck.PrintCurrentCardValue();
     deck.PrintCurrentCardType();
     deck.PrintPicture();
