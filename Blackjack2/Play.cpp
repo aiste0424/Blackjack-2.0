@@ -48,11 +48,6 @@ void Play::DrawCard()
     deck[m_randomType][m_randomValue].SetIsTaken(true);
 }
 
-void Play::CountScore()
-{
-	//Cards::convert;
-}
-
 void Play::PrintPicture()
 {
 	std::cout << "\n____________" << std::endl;

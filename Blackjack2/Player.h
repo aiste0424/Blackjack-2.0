@@ -10,6 +10,9 @@ public:
 
 	Player() {};
 	void DrawCard(Deck deck);
-	void CountScore(Score score);
+	void PrintScore();
+
+private:
+	Score m_score;
 };
 

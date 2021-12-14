@@ -13,11 +13,11 @@ void Player::DrawCard(Deck deck)
     deck.CardTaken();
     deck.PrintCurrentCardValue();
     deck.PrintCurrentCardType();
-    deck.PrintPicture();   
+    deck.PrintPicture();
 }
 
-void Player::CountScore(Score score)
+void Player::PrintScore()
 {
-    std::cout<< "Your current score is : "<< score.AddScore() << std::endl;
+    std::cout << "Your current score is : " << m_score.GetScore() << std::endl;
 }
 

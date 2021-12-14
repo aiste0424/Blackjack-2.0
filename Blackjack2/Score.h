@@ -5,10 +5,10 @@ class Score
 {
 public:
 
-	int SetScore(int score);
-	
-	int AddScore();
-
+	Score();
+	int GetScore();
+	void AddScore();
+	void SetScore(int score);
 	Cards::Value GetValue();
 
 

@@ -13,7 +13,6 @@ int main()
 	Deck m_deck;
 
 	Score m_score;
-	Cards m_cards;
 	//	m_score.SetScore(0);
 		m_score.AddScore();
 	

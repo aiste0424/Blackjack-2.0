@@ -32,13 +32,3 @@ Cards::Type Cards::GetType()
 {
     return m_type;
 }
-
-void Cards::convert()
-{
-    Value kortos;
-    int taskai = 0;
-
-    taskai = static_cast<int>(Value::Four);
-    std::cout << taskai << std::endl;
-
-}

@@ -1,19 +1,24 @@
 #include "Score.h"
 
-int Score::SetScore(int score)
+Score::Score()
 {
-    m_score = score;
-    m_score = 0;
     m_newScore = 0;
-    
-    return m_score;
+    m_score = 0;
 }
 
-int Score::AddScore()
+int Score::GetScore()
+{
+    return m_newScore;
+}
+
+void Score::AddScore()
 {
     m_newScore = m_score + m_value;
-    
-    return m_newScore;
+}
+
+void Score::SetScore(int score)
+{
+    m_score = score;
 }
 
 Cards::Value Score::GetValue()
