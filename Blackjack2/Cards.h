@@ -15,7 +15,6 @@ public:
 
 	enum class Value
 	{
-		Ace = 1,
 		Two = 2,
 		Three,
 		Four,
@@ -27,7 +26,8 @@ public:
 		Ten,
 		Jack,
 		Queen,
-		King
+		King,
+		Ace
 	};
 
 	Cards();

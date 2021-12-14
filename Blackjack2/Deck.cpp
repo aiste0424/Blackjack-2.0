@@ -20,7 +20,7 @@ Deck::Deck()
 				m_deck[i][j].SetValue(Cards::Value::Ten);
 			}
 			//ace default value is 1
-			else if (j == 0)
+			else if (j == 12)
 			{
 				m_deck[i][j].SetValue(Cards::Value::Ace);
 			}
