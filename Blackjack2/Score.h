@@ -16,9 +16,6 @@ public:
 	void Switch();
 	void UpdateSwitch();
 
-	Cards::Value GetValue();
-	Cards::Value GetCurrentCardValue();
-
 private:
 
 	int m_previousScore;

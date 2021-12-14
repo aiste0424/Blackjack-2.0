@@ -9,6 +9,7 @@ public:
 	//pure virtual function
 	//ABC - abstract base class
 	virtual void DrawCard(Deck deck) = 0;
+	void CountScore();
 
 //visible to the children classes, but private to the rest
 protected:
