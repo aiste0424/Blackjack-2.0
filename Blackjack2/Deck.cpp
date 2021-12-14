@@ -1,7 +1,7 @@
-#include "Deck.h"
-#include <time.h>
 #include <iostream>
 #include <string>
+#include <time.h>
+#include "Deck.h"
 
 Deck::Deck()
 {

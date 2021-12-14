@@ -6,11 +6,16 @@ class Score
 public:
 
 	Score();
+
 	int GetScore();
+
 	void AddScore();
 	void SetScore(int score);
-	Cards::Value GetValue();
+	void UpdateScore();
 
+
+	Cards::Value GetValue();
+	Cards::Value GetCurrentCardValue();
 
 private:
 

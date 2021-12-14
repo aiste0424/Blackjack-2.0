@@ -8,16 +8,14 @@ void Player::DrawCard(Deck deck)
     deck.SetRandomValue();
 
     std::cout << "\nYou got "; 
-    
-    //TODO: CardTaken() doesn't work here, but works in main
-    //deck.CardTaken();
     deck.PrintCurrentCardValue();
     deck.PrintCurrentCardType();
     deck.PrintPicture();
 }
 
 void Player::PrintScore()
-{
+{    
+    m_score.AddScore();
+    m_score.UpdateScore();
     std::cout << "Your current score is : " << m_score.GetScore() << std::endl;
 }
-

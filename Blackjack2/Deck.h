@@ -1,6 +1,6 @@
 #pragma once
-#include "Cards.h"
 #include <string>
+#include "Cards.h"
 
 class Deck
 {
@@ -12,11 +12,10 @@ public:
 	void PrintPicture();
 	void PrintCurrentCardType();
 	void PrintCurrentCardValue();
-	void AceValue();
+	void AceValue();//choose ace value?
 
 	Cards::Value GetCurrentCardValue();
 	Cards::Type GetCurrentCardType();
-
 
 	void CardTaken();
 
@@ -61,6 +60,5 @@ private:
 							{m_aceDiamonds, m_twoDiamonds, m_threeDiamonds, m_fourDiamonds, m_fiveDiamonds, m_sixDiamonds,
 							 m_sevenDiamonds, m_eightDiamonds, m_nineDiamonds, m_tenDiamonds, m_jackDiamonds,
 							 m_queenDiamonds, m_kingDiamonds}};
-
 };
 

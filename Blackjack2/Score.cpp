@@ -4,6 +4,7 @@ Score::Score()
 {
     m_newScore = 0;
     m_score = 0;
+    m_value = 0;
 }
 
 int Score::GetScore()
@@ -19,6 +20,11 @@ void Score::AddScore()
 void Score::SetScore(int score)
 {
     m_score = score;
+}
+
+void Score::UpdateScore()
+{
+    m_score = m_newScore;
 }
 
 Cards::Value Score::GetValue()
