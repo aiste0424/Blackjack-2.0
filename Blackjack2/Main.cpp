@@ -1,5 +1,8 @@
 #include "Start.h"
 #include "Play.h"
+#include "Player.h"
+#include "Score.h"
+#include "Start.h"
 
 int main()
 {

@@ -3,7 +3,7 @@
 Score::Score()
 {
     m_newScore = 0;
-    m_previousScore = 0;
+    m_score = 0;
     m_value = 0;
 }
 
@@ -22,7 +22,12 @@ void Score::SetScore(int score)
     m_newScore = score;
 }
 
-int Score::GetValue()
+void Score::UpdateScore()
+{
+    m_score = m_newScore;
+}
+
+Cards::Value Score::GetValue()
 {
     return m_value;
 }

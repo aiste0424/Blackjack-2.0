@@ -14,4 +14,3 @@ void Player::DrawCard(Deck deck)
     deck.PrintPicture();
 }
 
-
