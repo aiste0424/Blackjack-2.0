@@ -1,12 +1,16 @@
 #pragma once
-#include "Cards.h"
+
 #include <string>
 #include "ErrorCatching.h"
+#include "Dealer.h"
+#include "Player.h"
+#include "Deck.h"
 
 class Play
 {
 public:
 
+<<<<<<< HEAD
 	Play();
     void DrawCard();
     void CountScore();
@@ -24,40 +28,18 @@ private:
 
     int m_randomType;
     int m_randomValue;
+=======
+	//both player and the dealer get two cards at the start
+	void TheBeginning();
+>>>>>>> main
 
-    const int m_typeNumber = 4;
-    const int m_valueNumber = 13;
 
-    int m_newCard;
 
-    Cards   twoClubs, threeClubs, fourClubs, fiveClubs, sixClubs, sevenClubs,
-            eightClubs, nineClubs, tenClubs, jackClubs, queenClubs, kingClubs, aceClubs;
 
-    Cards   twoHearts, threeHearts, fourHearts, fiveHearts, sixHearts, sevenHearts,
-            eightHearts, nineHearts, tenHearts, jackHearts, queenHearts, kingHearts, aceHearts;
+private:
 
-    Cards   twoSpades, threeSpades, fourSpades, fiveSpades, sixSpades, sevenSpades,
-            eightSpades, nineSpades, tenSpades, jackSpades, queenSpades, kingSpades, aceSpades;
-
-    Cards   twoDiamonds, threeDiamonds, fourDiamonds, fiveDiamonds, sixDiamonds, sevenDiamonds,
-            eightDiamonds, nineDiamonds, tenDiamonds, jackDiamonds, queenDiamonds, kingDiamonds, aceDiamonds;
-
-    //============================================================
-
-    Cards deck[4][13] = { { twoClubs, threeClubs, fourClubs, fiveClubs, sixClubs,
-                            sevenClubs, eightClubs, nineClubs, tenClubs, jackClubs,
-                            queenClubs, kingClubs, aceClubs },
-
-                        { twoHearts, threeHearts, fourHearts, fiveHearts, sixHearts,
-                          sevenHearts, eightHearts, nineHearts, tenHearts, jackHearts,
-                          queenHearts, kingHearts, aceHearts },
-
-                        { twoSpades, threeSpades, fourSpades, fiveSpades, sixSpades,
-                         sevenSpades, eightSpades, nineSpades, tenSpades, jackSpades,
-                         queenSpades, kingSpades, aceSpades },
-
-                        { twoDiamonds, threeDiamonds, fourDiamonds, fiveDiamonds, sixDiamonds,
-                        sevenDiamonds, eightDiamonds, nineDiamonds, tenDiamonds, jackDiamonds,
-                        queenDiamonds, kingDiamonds, aceDiamonds }};
+	Dealer m_dealer;
+	Player m_player;
+	Deck m_deck;
 };
 

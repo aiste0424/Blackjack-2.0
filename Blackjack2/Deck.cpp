@@ -14,10 +14,25 @@ Deck::Deck()
         for (int j = 0; j < 13; j++)
         {
             m_deck[i][j].SetType(static_cast<Cards::Type>(i));
-            m_deck[i][j].SetValue(static_cast<Cards::Value>(j + 2));
+			//if card above value 10
+			if ((j+2) > static_cast<int>(Cards::Value::Ten))
+			{
+				m_deck[i][j].SetValue(Cards::Value::Ten);
+			}
+			//ace default value is 1
+			else if (j == 0)
+			{
+				m_deck[i][j].SetValue(Cards::Value::Ace);
+			}
+			//the rest values
+			else
+			{
+				m_deck[i][j].SetValue(static_cast<Cards::Value>(j+1));
+			}
 			m_deck[i][j].SetIsTaken(false);
         }
     }
+	std::cout << "Initializing Deck: successful\n";
 }
 
 void Deck::SetRandomType()
@@ -101,7 +116,7 @@ void Deck::PrintCurrentCardValue()
 		m_symbol = "K";
 		std::cout << "King";
 		break;
-
+	//TODO: prints 14 instead of A
 	case Cards::Value::Ace:
 		m_symbol = "A";
 		std::cout << "Ace";
@@ -112,6 +127,10 @@ void Deck::PrintCurrentCardValue()
 		std::cout << static_cast<int>(m_randomValue);
 		break;
 	}
+}
+
+void Deck::AceValue()
+{
 }
 
 Cards::Value Deck::GetCurrentCardValue()

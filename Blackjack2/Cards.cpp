@@ -1,5 +1,4 @@
 #include "Cards.h"
-#include <iostream>
 
 Cards::Cards()
 {
@@ -31,4 +30,13 @@ void Cards::SetIsTaken(bool taken)
 Cards::Type Cards::GetType()
 {
     return m_type;
+<<<<<<< HEAD
 }
+=======
+}
+
+Cards::Value Cards::GetValue()
+{
+    return m_value;
+}
+>>>>>>> main
