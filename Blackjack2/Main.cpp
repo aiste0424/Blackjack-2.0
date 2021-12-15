@@ -16,7 +16,6 @@ int main()
 	while (isGameRunning)
 	{	
 		m_play.TheDeal();
-
 	}
 	
 	return 0;

@@ -34,13 +34,11 @@ public:
 	//value - how much it is worth
 
 	Cards();
-
 	void SetSuit(Suit suit);
 	void SetRank(Rank rank);
 
 	void SetValue(int value);
 	void SetIsTaken(bool taken);
-	
 	int GetValue();
 
 	bool GetIsTaken();
