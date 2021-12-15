@@ -9,5 +9,7 @@ public:
 
 	Player() {};
 	void DrawCard(Deck deck);
+	void CountScore(Score m_score);
+	void PrintScore(Score m_score);
 };
 

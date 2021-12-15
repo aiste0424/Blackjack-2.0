@@ -13,3 +13,8 @@ void Dealer::DrawCard(Deck deck)
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 }
+
+void Dealer::CountScore(Score m_dscore)
+{
+    std::cout << "Dealers score is: " << m_dscore.GetScore()<< std::endl;
+}

@@ -8,19 +8,18 @@ public:
 	Score();
 
 	int GetScore();
-
 	void AddScore();
-	void SetScore(int score);
 	void UpdateScore();
 
-	void Switch();
-	void UpdateSwitch();
+	void SetScore(int score);
+	
 
 private:
 
 	int m_previousScore;
 	int m_newScore;
 	int m_value;
+
 
 };
 

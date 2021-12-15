@@ -8,5 +8,7 @@ public:
 
 	Dealer() {};
 	void DrawCard(Deck deck);
+	void CountScore(Score m_score);
+
 };
 
