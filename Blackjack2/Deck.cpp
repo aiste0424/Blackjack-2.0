@@ -5,7 +5,8 @@
 
 Deck::Deck()
 {
-    srand(time(0));
+	//changing variable from time_t to unsigned int because of a warning "Possible loss of data"
+    srand(unsigned int(time(0)));
 	m_randomSuit = 0;
 	m_randomRank = 0;
 
@@ -14,16 +15,17 @@ Deck::Deck()
     {
         for (int j = 0; j < m_rankNumber; j++)
         {
-            m_deck[i][j].SetSuit(static_cast<Cards::Suit>(i));
+			m_deck[i][j].SetSuit(static_cast<Cards::Suit>(i));
 			m_deck[i][j].SetRank(static_cast<Cards::Rank>(j+2));
 
 			//if card above rank 10
+			//(j+2) instead of j, because Rank enums start from 2 and the loops start from 0.
 			if ((j+2) > static_cast<int>(Cards::Rank::Ten) && (j+2) != static_cast<int>(Cards::Rank::Ace))
 			{
 				m_deck[i][j].SetValue(static_cast<int>(Cards::Rank::Ten));
 			}
 			//ace default value is 11
-			else if (j == static_cast<int>(Cards::Rank::Queen))
+			else if ((j+2) == static_cast<int>(Cards::Rank::Ace))
 			{
 				m_deck[i][j].SetValue(static_cast<int>(Cards::Rank::Jack));
 			}
@@ -35,8 +37,7 @@ Deck::Deck()
 			m_deck[i][j].SetIsTaken(false);
         }
     }
-	std::cout << "Initializing Deck: successful\n";
-}
+ }
 
 //random position in the deck
 void Deck::SetRandomSuit()
@@ -47,6 +48,18 @@ void Deck::SetRandomSuit()
 void Deck::SetRandomRank()
 {
 	m_randomRank = rand() % m_rankNumber + 2;
+}
+
+int Deck::GetRandomRank()
+{
+	return m_randomRank;
+}
+
+int Deck::GetValue()
+{
+	//2 must be deducted from rank, because it's giving a rank which starts from position 2.
+	//the deck itself starts from (0,0). Without it all the values are increased by 2.
+	return m_deck[m_randomSuit][m_randomRank-2].GetValue();
 }
 
 void Deck::PrintPicture()

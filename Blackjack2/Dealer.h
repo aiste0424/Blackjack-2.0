@@ -1,5 +1,4 @@
 #pragma once
-#include "GameObject.h"
 #include "Deck.h"
 
 class Dealer

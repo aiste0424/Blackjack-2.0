@@ -1,5 +1,6 @@
 #pragma once
 #include "Cards.h"
+#include "Deck.h"
 
 class Score
 {
@@ -7,20 +8,15 @@ public:
 
 	Score();
 
-	int GetScore();
+	//get a value of the current card from the deck class and set it
+	void SetCardValue(int value);
 
-	void AddScore();
-	void SetScore(int score);
-	void UpdateScore();
-
-	void Switch();
-	void UpdateSwitch();
+	void PrintScore();
+	void CountScore();
 
 private:
 
-	int m_previousScore;
-	int m_newScore;
-	int m_value;
-
+	int m_cardValue;
+	int m_score;
 };
 

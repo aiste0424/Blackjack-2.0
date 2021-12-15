@@ -1,13 +1,16 @@
 #pragma once
-#include "GameObject.h"
 #include "Deck.h"
-
+#include "Score.h"
 
 class Player
 {
 public:
 
-	Player() {};
+	Player();
 	void DrawCard(Deck deck);
+
+private:
+
+	Score m_score;
 };
 
