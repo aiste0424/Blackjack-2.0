@@ -7,5 +7,6 @@ public:
 
 	Dealer() {};
 	void DrawCard(Deck deck);
+
 };
 

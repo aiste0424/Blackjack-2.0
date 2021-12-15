@@ -9,8 +9,12 @@ class Play
 {
 public:
 
+    Play();
+
     //player gets two cards, dealer gets 1
     void TheDeal();
+    //do you wish to get extra card?
+    void TheChoice();
 
 private:
 

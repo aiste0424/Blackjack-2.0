@@ -24,3 +24,15 @@ void ErrorCatching::ValidAceValue(int input)
     }
     system("CLS");
 }
+
+void ErrorCatching::ValidAnswer(int input)
+{
+    while (input != 0 && input != 1)
+    {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        std::cout << "Try again\n";
+        std::cin >> input;
+    }
+    system("CLS");
+}
