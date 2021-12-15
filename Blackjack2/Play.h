@@ -1,9 +1,9 @@
 #pragma once
-#include <string>
 #include "Deck.h"
 #include "Dealer.h"
 #include "Player.h"
 #include "ErrorCatching.h"
+#include "Score.h"
 
 class Play
 {
@@ -18,4 +18,6 @@ private:
     Dealer m_dealer;
     Player m_player;
     ErrorCatching m_error;
+    Score m_score;
+
 };

@@ -33,6 +33,16 @@ int Cards::GetValue()
     return m_value;
 }
 
+Cards::Suit Cards::GetSuit()
+{
+    return m_suit;
+}
+
+Cards::Rank Cards::GetRank()
+{
+    return m_rank;
+}
+
 bool Cards::GetIsTaken()
 {
     return m_isTaken;

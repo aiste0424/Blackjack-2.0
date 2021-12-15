@@ -1,30 +1,23 @@
 #include <iostream>
 #include "Score.h"
 
-
 Score::Score()
 {
-    m_newScore = 0;
-    m_value = 2;
-    m_previousScore = 0;
+	m_cardValue = 0;
+	m_score = 0;
 }
 
-int Score::GetScore()
+void Score::SetCardValue(int value)
 {
-    return m_newScore;
+	m_cardValue = value;
 }
 
-void Score::AddScore()
+void Score::PrintScore()
 {
-    m_newScore = m_previousScore + m_value;
+	std::cout << "POINTS: " << m_score << std::endl;
 }
 
-void Score::SetScore(int score)
+void Score::CountScore()
 {
-    m_newScore = score;
-}
-
-void Score::UpdateScore()
-{
-    m_previousScore = m_newScore;
+	m_score = m_score + m_cardValue;
 }

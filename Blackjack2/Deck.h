@@ -10,6 +10,9 @@ public:
 	void SetRandomSuit();
 	void SetRandomRank();
 
+	int GetRandomRank();
+	int GetValue();
+
 	void PrintCurrentCardSuit();
 	void PrintCurrentCardRank();
 

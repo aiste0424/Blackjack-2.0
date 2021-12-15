@@ -2,10 +2,11 @@
 #include <iostream>
 
 //dealer deals 1 card to the player, one to himself,
-//one to the player and one to himself. The secondcard that the dealer got is face down.
+//one to the player and one to himself. The second card that the dealer got is faced down.
 void Play::TheDeal()
 {
     //one card to player, then dealer, then player again
+
     m_player.DrawCard(m_deck);
     m_deck.CardTaken();
  
@@ -16,7 +17,6 @@ void Play::TheDeal()
     //one for player
     m_player.DrawCard(m_deck);
     m_deck.CardTaken();
-
 
     system("pause");
 }

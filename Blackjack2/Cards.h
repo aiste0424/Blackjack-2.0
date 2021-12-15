@@ -39,6 +39,9 @@ public:
 
 	void SetValue(int value);
 	void SetIsTaken(bool taken);
+
+	Suit GetSuit();
+	Rank GetRank();
 	int GetValue();
 
 	bool GetIsTaken();
