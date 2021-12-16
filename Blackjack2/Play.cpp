@@ -29,7 +29,7 @@ void Play::TheDeal()
     m_deck.CardTaken();
 
     //============== Does Player have a BLACKJACK ==========
-   
+    m_blackjack.IsBlackjack(m_player, m_dealer, m_deck);   //Checks if player has blackjack
 
 
     //============== Make a choice ========== 
@@ -50,4 +50,5 @@ void Play::TheDeal()
     }
     system("pause");
 }
-
+//TODO: first dealer card should stay without a new card untill player says no more cards
+//TODO: if player wants a card, they should only get 1 at a time
