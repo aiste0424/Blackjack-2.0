@@ -2,6 +2,7 @@
 #include "Deck.h"
 #include "Dealer.h"
 #include "Player.h"
+#include "Outcomes.h"
 #include "ErrorCatching.h"
 #include "Score.h"
 
@@ -21,7 +22,9 @@ private:
     Deck m_deck;
     Dealer m_dealer;
     Player m_player;
-    ErrorCatching m_error;
     Score m_score;
+    ErrorCatching m_error;
+    Outcomes m_blackjack;
+
 
 };

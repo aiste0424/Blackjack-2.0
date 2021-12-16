@@ -6,6 +6,11 @@ Player::Player()
     answer = 2;
 }
 
+int Player::GetScore(Deck deck)
+{
+    return m_deck.GetValue();
+}
+
 void Player::DrawCard(Deck deck)
 {
     //gives random number
