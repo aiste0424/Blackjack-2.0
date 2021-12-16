@@ -13,15 +13,14 @@ public:
 
     //player gets two cards, dealer gets 1
     void TheDeal();
-    //do you wish to get extra card?
-    void TheChoice();
+
 
 private:
 
     Deck m_deck;
     Dealer m_dealer;
-    Player m_player;
     ErrorCatching m_error;
+    Player m_player;
     Score m_score;
 
 };

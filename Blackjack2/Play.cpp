@@ -20,16 +20,34 @@ void Play::TheDeal()
     m_dealer.DrawCard(m_deck);
     m_deck.CardTaken();
 
-    //============== 2nd card for DEALER =========
+    //============== 2nd card for PLAYER =========
     m_player.DrawCard(m_deck);
     m_deck.CardTaken();
 
+    //============== 2nd card for DEALER =========
+    m_dealer.DrawCard(m_deck);
+    m_deck.CardTaken();
+
     //============== Does Player have a BLACKJACK ==========
+   
 
 
-    //============== Make a choice ==========
-    m_player.MakeChoice(m_deck);
+    //============== Make a choice ========== 
+    if (m_player.MakeChoice() == 0) //player doesn't want a card
+    {
+        //start dealing for the dealer
+        std::cout<<"Player gets no more cards"<<std::endl;
+    }
+    else //player wants a card
+    {
+        for (int i = 0; m_deck.GetValue() <= 21; i++)
+        {
+            m_player.DrawCard(m_deck);
 
+            system("pause");
+        }
+        
+    }
     system("pause");
 }
 

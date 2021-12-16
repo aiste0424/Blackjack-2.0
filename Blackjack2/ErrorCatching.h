@@ -9,7 +9,7 @@ public:
 	//when there's two options (for ace)
 	void ValidAceValue(int input);
 	
-	//when there's not a int 
+	//when the answer is not a 0 or 1 
 	void ValidAnswer(int input);
 };
 

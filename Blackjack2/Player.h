@@ -8,9 +8,9 @@ class Player
 public:
 
 	Player();
+	
 	void DrawCard(Deck deck);
-	void MakeChoice(Deck deck);
-
+	bool MakeChoice(); //0 - no card; 1 - gimme one 
 
 private:
 
