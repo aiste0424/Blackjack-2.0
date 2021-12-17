@@ -67,5 +67,5 @@ void Player::MakeChoice(Deck& deck)
 
 void Player::ResetScore(Score score)
 {
-    m_score.ResetScore();
+    m_score.SetScore(0);
 }

@@ -7,7 +7,7 @@ void Dealer::ResetScore()
 }
 
 //Aiste's function
-void Dealer::DrawCard(Deck deck)
+void Dealer::DrawCard(Deck& deck)
 {
     //gives random number
     deck.SetRandomSuit();
@@ -33,6 +33,6 @@ int Dealer::GetScore(Score score)
 
 void Dealer::ResetScore(Score score)
 {
-    m_score.ResetScore();
+    m_score.SetScore(0);
 }
 
