@@ -8,7 +8,7 @@ Outcomes::Outcomes()
     m_blackjack = false;
 }
 
-void Outcomes::SetResult(bool win, bool lose, bool draw, bool blackjack)
+void Outcomes::SetResult(bool win, bool lose, bool draw, bool blackjack)   
 {
     m_win = win;
     m_lose = lose;
