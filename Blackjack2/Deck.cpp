@@ -2,24 +2,27 @@
 #include <time.h>
 #include <string>
 #include <iostream>
-
+//=================================
+//   MADE BY Aiste Simonaityte   //
+//=================================
 Deck::Deck()
 {
-	//changing variable from time_t to unsigned int because of a warning "Possible loss of data"
-    srand(unsigned int(time(0)));
 	m_randomSuit = 0;
 	m_randomRank = 0;
+
+	//changing variable from time_t to unsigned int because of a warning "Possible loss of data"
+    srand(unsigned int(time(0)));
 
 	//initializing the correct card suits, ranks and values
     for (int i = 0; i < m_suitNumber; i++)
     {
         for (int j = 0; j < m_rankNumber; j++)
         {
+			m_deck[i][j].SetIsTaken(false);
 			m_deck[i][j].SetSuit(static_cast<Cards::Suit>(i));
 			m_deck[i][j].SetRank(static_cast<Cards::Rank>(j+2));
 
-			//if card above rank 10
-			//(j+2) instead of j, because Rank enums start from 2 and the loops start from 0.
+			//(j+2) instead of j, because Rank enums start from 2 and the loops & matrices start from 0.
 			if ((j+2) > static_cast<int>(Cards::Rank::Ten) && (j+2) != static_cast<int>(Cards::Rank::Ace))
 			{
 				m_deck[i][j].SetValue(static_cast<int>(Cards::Rank::Ten));
@@ -34,12 +37,10 @@ Deck::Deck()
 			{
 				m_deck[i][j].SetValue((j+2));
 			}
-			m_deck[i][j].SetIsTaken(false);
         }
     }
  }
 
-//random position in the deck
 void Deck::SetRandomSuit()
 {
 	m_randomSuit = rand() % m_suitNumber;
@@ -50,21 +51,16 @@ void Deck::SetRandomRank()
 	m_randomRank = rand() % m_rankNumber + 2;
 }
 
-int Deck::GetRandomRank()
-{
-	return m_randomRank;
-}
-
+//2 must be deducted from rank, because it's giving a rank which starts from position 2.
+//the deck itself starts from (0,0). Without it all the values are increased by 2.
 int Deck::GetValue()
 {
-	//2 must be deducted from rank, because it's giving a rank which starts from position 2.
-	//the deck itself starts from (0,0). Without it all the values are increased by 2.
 	return m_deck[m_randomSuit][m_randomRank-2].GetValue();
 }
 
 void Deck::PrintPicture()
 {
-	std::cout << "\n____________" << std::endl;
+	std::cout << "\n___________" << std::endl;
 	std::cout << "|          |" << std::endl;
 	std::cout << "| " << m_symbol;
 	//one space difference to make the card ASCII art look neat
@@ -92,7 +88,8 @@ void Deck::PrintPicture()
 	}
 	std::cout << "|__________|" << std::endl;
 }
-//restarting the game
+
+//for replayability purposes
 void Deck::ResetCards()
 {
 	for (int i = 0; i < m_suitNumber; i++)
@@ -126,7 +123,6 @@ void Deck::PrintCurrentCardSuit()
 	}
 }
 
-//prints the current value 
 void Deck::PrintCurrentCardRank()
 {
 	switch (static_cast<Cards::Rank>(m_randomRank))

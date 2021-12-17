@@ -1,10 +1,12 @@
 #include <iostream>
 #include "Score.h"
-
+//=================================
+//   MADE BY Aiste Simonaityte   //
+//=================================
 Score::Score()
 {
-	m_cardValue = 0;
 	m_score = 0;
+	m_cardValue = 0;
 }
 
 void Score::SetCardValue(int value)
@@ -14,12 +16,17 @@ void Score::SetCardValue(int value)
 
 void Score::PrintScore()
 {
-	std::cout << "POINTS: " << m_score << std::endl;
+	std::cout << m_score << std::endl;
 }
 
-void Score::CountScore()
+void Score::UpdateScore()
 {
 	m_score = m_score + m_cardValue;
+}
+
+void Score::ResetScore()
+{
+	m_score = 0;
 }
 
 int Score::GetScore()

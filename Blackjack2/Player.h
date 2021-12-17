@@ -7,6 +7,7 @@ class Player
 {
 public:
 
+	//Aiste's
 	enum class Choice
 	{
 		No,
@@ -14,12 +15,14 @@ public:
 	};
 
 	Player();
+	void DrawCard(Deck& deck);
 
-	int GetScore(Score score);   //Gergo did this function to pull player/dealer score for the outcomes
-	int GetChoice();   //Gergo did this function to pull player input for the outcomes in Play class
+	//Gergo's functions
+	int GetScore(Score score);   //pulls player/dealer score for the outcomes
+	int GetChoice();			//pulls players input for the outcomes in Play class
 
-	void DrawCard(Deck deck);
-	void MakeChoice(Deck deck); //0 - no card; 1 - gimme one Simas
+	//Simas' function
+	void MakeChoice(Deck& deck);
 
 private:
 

@@ -1,12 +1,32 @@
-#include "Player.h"
-#include <iostream>
 #include <string>
+#include <iostream>
+#include "Player.h"
 
+//Aiste's 2 functions
 Player::Player()
 {
     m_choice = 0;
 }
 
+void Player::DrawCard(Deck& deck)
+{
+    //gives random number
+    deck.SetRandomSuit();
+    deck.SetRandomRank();
+
+    std::cout << "\nYou got ";
+
+    deck.PrintCurrentCardRank();
+    deck.PrintCurrentCardSuit();
+    deck.PrintPicture();
+
+    std::cout << "Player's points: ";
+    m_score.SetCardValue(deck.GetValue());
+    m_score.UpdateScore();
+    m_score.PrintScore();
+}
+
+//Gergo's 2 functions
 int Player::GetScore(Score score)
 {
     return m_score.GetScore();
@@ -17,54 +37,20 @@ int Player::GetChoice()
     return m_choice;
 }
 
-void Player::DrawCard(Deck deck)
-{
-    //gives random number
-    deck.SetRandomSuit();
-    deck.SetRandomRank();
-
-    std::cout << "\nYou have ";
-
-    //prints relevant stuff
-    deck.PrintCurrentCardRank();
-    deck.PrintCurrentCardSuit();
-    deck.PrintPicture();
-
-    m_score.SetCardValue(deck.GetValue());
-
-    m_score.CountScore();
-    m_score.PrintScore();
-}
-
-void Player::MakeChoice(Deck deck)
+//Simas' function
+void Player::MakeChoice(Deck& deck)
 {
     std::cout << "Would you like another card? [1/0]" << std::endl;
     std::cin >> m_choice;
 
-
     if (m_choice == static_cast<int>(Player::Choice::No))
     {
-        std::cout << "Player stays on " << m_score.GetScore() << "! Dealers turn." << std::endl; //Gergo
+        std::cout << "Player stays on " << m_score.GetScore() << " points! Dealer's turn." << std::endl;
     }
     else if (m_choice == static_cast<int>(Player::Choice::Yes))
     {
         std::cout << "Card for the Player!" << std::endl;
-
-        //gives random number
-        deck.SetRandomSuit();
-        deck.SetRandomRank();
-
-        std::cout << "\nYou have ";
-
-        //prints relevant stuff
-        deck.PrintCurrentCardRank();
-        deck.PrintCurrentCardSuit();
-        deck.PrintPicture();
-
-        m_score.SetCardValue(deck.GetValue());
-        m_score.CountScore();
-
-        m_score.PrintScore();
+        DrawCard(deck);
     }
     else
     {

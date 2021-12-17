@@ -1,20 +1,23 @@
 #pragma once
-#include "Cards.h"
 #include "Deck.h"
-
+#include "Cards.h"
+//=================================
+//   MADE BY Aiste Simonaityte   //
+//=================================
 class Score
 {
 public:
 
 	Score();
 
-	//get a value of the current card from the deck class and set it
-	void SetCardValue(int value);
+	int GetScore();
 
 	void PrintScore();
-	void CountScore();
+	void UpdateScore();
+	void ResetScore();//replayability purposes
 
-	int GetScore();
+	//get a value of the current card from the deck class and set it
+	void SetCardValue(int value);
 
 private:
 

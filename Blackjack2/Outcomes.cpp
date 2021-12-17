@@ -1,5 +1,5 @@
 #include "Outcomes.h"
-
+//Gergo's class
 Outcomes::Outcomes()
 {
     m_win = false;
