@@ -21,5 +21,6 @@ void Dealer::DrawCard(Deck deck)
     m_score.SetCardValue(deck.GetValue());
 
     m_score.CountScore();
+    std::cout << "DEALER ";
     m_score.PrintScore();
 }
