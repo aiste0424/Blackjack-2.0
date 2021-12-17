@@ -6,7 +6,7 @@ class Start
 public:
 
 	Start();
-	void ShowIntroduction();
+	void ShowIntroduction(); //Simas added ASCII art
 
 private:
 

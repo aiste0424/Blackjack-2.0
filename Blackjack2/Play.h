@@ -14,6 +14,7 @@ public:
 
     void TheDeal();   //player gets two cards, dealer gets 1. Order of the cards dealt: player -> dealer -> player.
 
+
 private:
 
     Deck m_deck;

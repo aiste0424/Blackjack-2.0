@@ -19,7 +19,7 @@ public:
 	int GetChoice();   //Gergo did this function to pull player input for the outcomes in Play class
 
 	void DrawCard(Deck deck);
-	void MakeChoice(Deck deck);
+	bool MakeChoice(); //0 - no card; 1 - gimme one Simas
 
 private:
 

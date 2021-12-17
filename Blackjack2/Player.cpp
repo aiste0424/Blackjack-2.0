@@ -36,7 +36,7 @@ void Player::DrawCard(Deck deck)
     m_score.PrintScore();
 }
 
-void Player::MakeChoice(Deck deck)
+bool Player::MakeChoice()
 {
     std::cout << "Would you like another card? [1/0]" << std::endl;
     std::cin >> m_choice;
