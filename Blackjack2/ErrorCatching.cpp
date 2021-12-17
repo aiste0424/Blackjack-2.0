@@ -1,7 +1,7 @@
 #include "ErrorCatching.h"
 #include "Player.h"
 #include <iostream>
-
+//Aiste's
 //checking input when the player starts the game
 void ErrorCatching::ValidInput(int input)
 {
@@ -14,7 +14,7 @@ void ErrorCatching::ValidInput(int input)
 	}
     system("CLS");
 }
-
+//Simas'
 //checks the input when the player chooses whether
 //they want a new card or not
 void ErrorCatching::ValidAnswer(int input)

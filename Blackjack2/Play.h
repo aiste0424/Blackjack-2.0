@@ -9,13 +9,16 @@
 class Play
 {
 public:
-
+    //Aiste's functions
     //player gets two cards, dealer gets 1. Order of the cards dealt: player -> dealer -> player.
     void TheDeal();
-    void MainGame();
     void PauseClear();
     void PlayerTurn();
     void DealerTurn();
+    void Restart();
+
+    //Gergo's function
+    void MainGame();
 
 private:
 

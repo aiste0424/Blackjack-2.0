@@ -1,26 +1,11 @@
 #include "Play.h"
 #include <iostream>
 
-//the first 
-void Play::TheDeal()
-{
-    //============== 1st card to PLAYER ==========
-    PlayerTurn();
-    PauseClear();
-    //============== 1st card for DEALER =========
-    DealerTurn();
-    PauseClear();
-    //============== 2nd card for PLAYER =========
-    PlayerTurn();
-    PauseClear();
-    //============== Does Player have a BLACKJACK ==========
-    m_outcome.IsBlackjack(m_player, m_dealer, m_score);// Gergo
-}
-
+//GERGO'S
 void Play::MainGame()
 {
     //============== Make a choice ========== 
-    //GERGO  
+     
     while (m_player.GetChoice() == static_cast<int>(Player::Choice::Yes) ||   //loop player choices  Yes/No
            m_player.GetScore(m_score) < 21)     //this line is the reason why it inappropriatry offers another card at the end of some hands.
     {
@@ -29,6 +14,7 @@ void Play::MainGame()
         if (m_player.GetScore(m_score) > 21)      //If the player asks for another card, and busts - Lose function
         {
             m_outcome.Lose(m_player, m_dealer, m_score);
+            break;
         }
 
         if (m_player.GetChoice() == static_cast<int>(Player::Choice::No))  //If player chooses no more cards, dealer pulls cards until reaches 17, or bust
@@ -46,24 +32,47 @@ void Play::MainGame()
                 m_player.GetScore(m_score) <= 21)
             {
                 m_outcome.Win(m_player, m_dealer, m_score);
+                break;
             }
             else if (m_player.GetScore(m_score) ==  //Defining Tie conditions after player chooses no more cards
                 m_dealer.GetScore(m_score))
             {
                 m_outcome.Draw(m_player, m_dealer, m_score);
+                break;
             }
             else   //Any other case than the above, player loses
             {
                 m_outcome.Lose(m_player, m_dealer, m_score);
+                break;
             }
         }
     }
 }
 
+//Aiste's function
+void Play::TheDeal()
+{
+    //============== 1st card to PLAYER ==========
+    PlayerTurn();
+    PauseClear();
+ 
+    //============== 1st card for DEALER =========
+    DealerTurn();
+    PauseClear();
+
+    //============== 2nd card for PLAYER =========
+    PlayerTurn();
+    PauseClear();
+
+    //============== Does Player have a BLACKJACK ==========
+    m_outcome.IsBlackjack(m_player, m_dealer, m_score);// Gergo
+}
+//Aiste's 3 functions
+//TODO proper pause/clear in the next assignment 
 void Play::PauseClear()
 {
     system("pause");
-    system("CLS");
+    //system("CLS");
 }
 
 void Play::PlayerTurn()
@@ -76,4 +85,12 @@ void Play::DealerTurn()
 {
     m_dealer.DrawCard(m_deck);
     m_deck.CardTaken();
+}
+
+void Play::Restart()
+{
+    std::cout << "The game has been reset";
+    m_deck.ResetCards();
+    m_dealer.ResetScore();
+    m_player.ResetScore();
 }

@@ -13,6 +13,7 @@ void Score::SetCardValue(int value)
 {
 	m_cardValue = value;
 }
+//TODO: implement soft hand in the next assignment
 
 void Score::PrintScore()
 {
@@ -24,12 +25,12 @@ void Score::UpdateScore()
 	m_score = m_score + m_cardValue;
 }
 
-void Score::ResetScore()
-{
-	m_score = 0;
-}
-
 int Score::GetScore()
 {
 	return m_score;
+}
+
+void Score::SetScore(int score)
+{
+	m_score = score;
 }

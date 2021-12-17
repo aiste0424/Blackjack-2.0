@@ -14,16 +14,23 @@ void Player::DrawCard(Deck& deck)
     deck.SetRandomSuit();
     deck.SetRandomRank();
 
+    std::cout << "Player's points: ";
+    m_score.SetCardValue(deck.GetValue());
+    
+    m_score.UpdateScore();
+    m_score.PrintScore();
+
     std::cout << "\nYou got ";
 
     deck.PrintCurrentCardRank();
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 
-    std::cout << "Player's points: ";
-    m_score.SetCardValue(deck.GetValue());
-    m_score.UpdateScore();
-    m_score.PrintScore();
+}
+
+void Player::ResetScore()
+{
+    m_score.SetScore(0);
 }
 
 //Gergo's 2 functions

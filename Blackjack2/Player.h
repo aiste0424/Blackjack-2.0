@@ -7,7 +7,7 @@ class Player
 {
 public:
 
-	//Aiste's
+	//Aiste's enum class and 2 functions
 	enum class Choice
 	{
 		No,
@@ -16,6 +16,7 @@ public:
 
 	Player();
 	void DrawCard(Deck& deck);
+	void ResetScore();
 
 	//Gergo's functions
 	int GetScore(Score score);   //pulls player/dealer score for the outcomes

@@ -1,6 +1,8 @@
 #pragma once
 #include "ErrorCatching.h"
-
+//=================================
+//   MADE BY Simas Pauliukenas   //
+//=================================
 class Start
 {
 public:

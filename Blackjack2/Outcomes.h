@@ -6,8 +6,9 @@
 #include "Player.h"
 #include "Dealer.h"
 #include "Start.h"
-
-//Gergo's class, defining win/lose conditions
+//=================================
+//      MADE BY Gergo Varga      //
+//=================================
 class Outcomes
 {
 public:

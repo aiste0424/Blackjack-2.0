@@ -1,6 +1,8 @@
 #include "Start.h"
 #include <iostream>
-
+//=================================
+//   MADE BY Simas Pauliukenas   //
+//=================================
 Start::Start()
 {
     m_start = 0;

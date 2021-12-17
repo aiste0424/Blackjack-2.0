@@ -1,6 +1,11 @@
 #include "Dealer.h"
 #include <iostream>
 
+void Dealer::ResetScore()
+{
+    m_score.SetScore(0);
+}
+
 //Aiste's function
 void Dealer::DrawCard(Deck deck)
 {
@@ -8,17 +13,17 @@ void Dealer::DrawCard(Deck deck)
     deck.SetRandomSuit();
     deck.SetRandomRank();
 
+    std::cout << "Dealer's points: ";
+    m_score.SetCardValue(deck.GetValue());
+
+    m_score.UpdateScore();
+    m_score.PrintScore();
     std::cout << "The dealer got ";
 
     deck.PrintCurrentCardRank();
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 
-    std::cout << "Dealer's points: ";
-    m_score.SetCardValue(deck.GetValue());
-
-    m_score.UpdateScore();
-    m_score.PrintScore();
 }
 //Gergo's function
 int Dealer::GetScore(Score score)
