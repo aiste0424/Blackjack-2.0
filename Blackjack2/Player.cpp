@@ -1,14 +1,20 @@
 #include "Player.h"
 #include <iostream>
+#include <string>
 
 Player::Player()
 {
-    answer = 2;
+    m_choice = 0;
 }
 
-int Player::GetScore(Deck deck)
+int Player::GetScore(Score score)
 {
-    return m_deck.GetValue();
+    return m_score.GetScore();
+}
+
+int Player::GetChoice()
+{
+    return m_choice;
 }
 
 void Player::DrawCard(Deck deck)
@@ -17,39 +23,38 @@ void Player::DrawCard(Deck deck)
     deck.SetRandomSuit();
     deck.SetRandomRank();
 
-    std::cout << "\nYou got "; 
-    
+    std::cout << "\nYou have ";
+
     //prints relevant stuff
     deck.PrintCurrentCardRank();
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 
     m_score.SetCardValue(deck.GetValue());
-   
+
     m_score.CountScore();
     m_score.PrintScore();
 }
 
 void Player::MakeChoice(Deck deck)
 {
-    std::cout << "Player, do you wish to continue and receive another card? [0/1]" << std::endl;
-    std::cin >> answer;
+    std::cout << "Would you like another card? [1/0]" << std::endl;
+    std::cin >> m_choice;
 
 
-    if (answer == 0)
+    if (m_choice == static_cast<int>(Player::Choice::No))
     {
-        std::cout << "You said NO" << std::endl;
+        std::cout << "Player stays on " << m_score.GetScore() << "! Dealers turn." << std::endl; //Gergo
     }
-    else if (answer == 1)
+    else if (m_choice == static_cast<int>(Player::Choice::Yes))
     {
-        std::cout << "You said YES" << std::endl;
-        std::cout << "Goodluck, Player" << std::endl;
-        
+        std::cout << "Card for the Player!" << std::endl;
+
         //gives random number
         deck.SetRandomSuit();
         deck.SetRandomRank();
 
-        std::cout << "\nYou got ";
+        std::cout << "\nYou have ";
 
         //prints relevant stuff
         deck.PrintCurrentCardRank();
@@ -63,6 +68,6 @@ void Player::MakeChoice(Deck deck)
     }
     else
     {
-        m_error.ValidInput(answer);
+        m_error.ValidInput(m_choice);
     }
 }

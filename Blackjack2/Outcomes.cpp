@@ -1,8 +1,5 @@
 #include "Outcomes.h"
 
-//TODO: figure out how to implement blackjack in the conditions
-//TODO: implement these functions at the correct place
-//TODO: do PrintResult() -> do we even need that? discuss.
 Outcomes::Outcomes()
 {
     m_win = false;
@@ -19,51 +16,57 @@ void Outcomes::SetResult(bool win, bool lose, bool draw, bool blackjack)
     m_blackjack = blackjack;
 }
 
-//void WinLoseDrawCond::SetScore(int score)
-//{
-//
-//}
-
-bool Outcomes::Win(Player player, Dealer dealer, Deck deck)
+void Outcomes::Win(Player player, Dealer dealer, Score score)
 {
-    if (dealer.GetScore(deck) < player.GetScore(deck) < 22 ||
-        dealer.GetScore(deck) > 21 && player.GetScore(deck) < 22)
+    if (dealer.GetScore(score) < player.GetScore(score) < 22 ||
+        dealer.GetScore(score) > 21 && player.GetScore(score) < 22)
     {
-        return m_win = true;
+        m_win = true;
         std::cout << "Player wins!" << std::endl;
+        std::cout << "" << std::endl;
+        std::cout << "Press any key for a new hand." << std::endl;
+        system("pause");
+        m_start.ShowIntroduction();
     }
 }
 
-bool Outcomes::Lose(Player player, Dealer dealer, Deck deck)
+void Outcomes::Lose(Player player, Dealer dealer, Score score)
 {
-    if (player.GetScore(deck) < dealer.GetScore(deck) < 22 ||
-        player.GetScore(deck) > 21)
+    if (player.GetScore(score) < dealer.GetScore(score) < 22 ||
+        player.GetScore(score) > 21)
     {
-        return m_lose = true;
+        m_lose = true;
         std::cout << "House wins!" << std::endl;
+        std::cout << "" << std::endl;
+        std::cout << "Press any key for a new hand." << std::endl;
+        system("pause");
+        m_start.ShowIntroduction();
     }
 }
 
-bool Outcomes::Draw(Player player, Dealer dealer, Deck deck)
+void Outcomes::Draw(Player player, Dealer dealer, Score score)
 {
-    if (dealer.GetScore(deck) == player.GetScore(deck))
+    if (dealer.GetScore(score) == player.GetScore(score))
     {
-        return m_draw = true;
+        m_draw = true;
         std::cout << "It's a Stand-off!" << std::endl;
+        std::cout << "" << std::endl;
+        std::cout << "Press any key for a new hand." << std::endl;
+        system("pause");
+        m_start.ShowIntroduction();
     }
 }
 
-void Outcomes::IsBlackjack(Player player, Dealer dealer, Deck deck)
+void Outcomes::IsBlackjack(Player player, Dealer dealer, Score score)
 {
-    if (player.GetScore(deck) == 21 ||
-        dealer.GetScore(deck) == 21)
+    if (player.GetScore(score) == 21 ||
+        dealer.GetScore(score) == 21)
     {
         m_blackjack = true;
-        std::cout << "You have a BLACKJACK!" << std::endl;
+        std::cout << "Congrats! You have a BLACKJACK! " << std::endl;
+        std::cout << "" << std::endl;
+        std::cout << "Press any key for a new hand." << std::endl;
+        system("pause");
+        m_start.ShowIntroduction();
     }
-}
-
-void Outcomes::PrintResult()
-{
-
 }

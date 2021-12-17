@@ -14,9 +14,10 @@ public:
 	void PrintScore();
 	void CountScore();
 
+	int GetScore();
+
 private:
 
 	int m_cardValue;
 	int m_score;
 };
-

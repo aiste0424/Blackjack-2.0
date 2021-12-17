@@ -1,24 +1,25 @@
 #include "Dealer.h"
 #include <iostream>
 
-int Dealer::GetScore(Deck deck)
+int Dealer::GetScore(Score score)
 {
-    return m_deck.GetValue();
+    return m_score.GetScore();
 }
 
 void Dealer::DrawCard(Deck deck)
 {
-	//gives random number
+    //gives random number
     deck.SetRandomSuit();
     deck.SetRandomRank();
-    
-    std::cout << "The dealer got ";
+
+    std::cout << "The dealer has ";
 
     deck.PrintCurrentCardRank();
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 
-//TODO: insert dealer AI here, like:
-//TODO: if player said no more cards, do DrawCard while dealerScore >= 17
+    m_score.SetCardValue(deck.GetValue());
 
+    m_score.CountScore();
+    m_score.PrintScore();
 }

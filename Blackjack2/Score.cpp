@@ -21,3 +21,8 @@ void Score::CountScore()
 {
 	m_score = m_score + m_cardValue;
 }
+
+int Score::GetScore()
+{
+	return m_score;
+}

@@ -7,20 +7,25 @@ class Player
 {
 public:
 
+	enum class Choice
+	{
+		No,
+		Yes
+	};
+
 	Player();
 
-	int GetScore(Deck deck);
+	int GetScore(Score score);   //Gergo did this function to pull player/dealer score for the outcomes
+	int GetChoice();   //Gergo did this function to pull player input for the outcomes in Play class
 
 	void DrawCard(Deck deck);
 	void MakeChoice(Deck deck);
 
-
 private:
 
-	int answer;
+	int m_choice;
 
 	Deck m_deck;
 	Score m_score;
 	ErrorCatching m_error;
 };
-
