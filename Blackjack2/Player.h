@@ -23,6 +23,7 @@ public:
 
 	//Simas' function
 	void MakeChoice(Deck& deck);
+	void ResetScore(Score score);
 
 private:
 

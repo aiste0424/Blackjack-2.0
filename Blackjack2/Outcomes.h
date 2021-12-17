@@ -24,6 +24,8 @@ public:
 private:
 
 	Start m_start;  //This is just for after the hands to start a new hand with this maybe, but not necessary.
+	Dealer m_dealer;
+	Player m_player;
 
 	bool m_win;
 	bool m_lose;

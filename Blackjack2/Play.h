@@ -17,6 +17,8 @@ public:
     void PlayerTurn();
     void DealerTurn();
 
+    void ResetScores();
+
 private:
 
     Deck m_deck;

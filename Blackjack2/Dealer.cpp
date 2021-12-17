@@ -17,8 +17,6 @@ void Dealer::DrawCard(Deck deck)
     std::cout << "Dealer's points: ";
     m_score.SetCardValue(deck.GetValue());
 
-    m_score.CountScore();
-    std::cout << "DEALER ";
     m_score.UpdateScore();
     m_score.PrintScore();
 }
@@ -26,5 +24,10 @@ void Dealer::DrawCard(Deck deck)
 int Dealer::GetScore(Score score)
 {
     return m_score.GetScore();
+}
+
+void Dealer::ResetScore(Score score)
+{
+    m_score.ResetScore();
 }
 

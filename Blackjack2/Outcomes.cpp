@@ -26,6 +26,8 @@ void Outcomes::Win(Player player, Dealer dealer, Score score)
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
         system("pause");
+        player.ResetScore(score);
+        dealer.ResetScore(score);
         m_start.ShowIntroduction();
     }
 }
@@ -40,6 +42,8 @@ void Outcomes::Lose(Player player, Dealer dealer, Score score)
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
         system("pause");
+        player.ResetScore(score);
+        dealer.ResetScore(score);
         m_start.ShowIntroduction();
     }
 }
@@ -53,6 +57,8 @@ void Outcomes::Draw(Player player, Dealer dealer, Score score)
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
         system("pause");
+        player.ResetScore(score);
+        dealer.ResetScore(score);
         m_start.ShowIntroduction();
     }
 }
@@ -67,6 +73,8 @@ void Outcomes::IsBlackjack(Player player, Dealer dealer, Score score)
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
         system("pause");
+        player.ResetScore(score);
+        dealer.ResetScore(score);
         m_start.ShowIntroduction();
     }
 }

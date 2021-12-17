@@ -12,6 +12,7 @@ int main()
 		m_start.ShowIntroduction();
 		m_play.TheDeal();
 		m_play.MainGame();
+		m_play.ResetScores();
 	}
 	
 	return 0;
