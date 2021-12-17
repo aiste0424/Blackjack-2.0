@@ -31,3 +31,8 @@ int Dealer::GetScore(Score score)
     return m_score.GetScore();
 }
 
+void Dealer::ResetScore(Score score)
+{
+    m_score.ResetScore();
+}
+

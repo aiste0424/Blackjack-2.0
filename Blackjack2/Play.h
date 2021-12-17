@@ -20,6 +20,8 @@ public:
     //Gergo's function
     void MainGame();
 
+    void ResetScores();
+
 private:
 
     Deck m_deck;

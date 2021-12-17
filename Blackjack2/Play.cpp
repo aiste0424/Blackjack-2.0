@@ -9,6 +9,7 @@ void Play::MainGame()
     while (m_player.GetChoice() == static_cast<int>(Player::Choice::Yes) ||   //loop player choices  Yes/No
            m_player.GetScore(m_score) < 21)     //this line is the reason why it inappropriatry offers another card at the end of some hands.
     {
+        std::cout << "you enter the loop" << std::endl;
         m_player.MakeChoice(m_deck);
 
         if (m_player.GetScore(m_score) > 21)      //If the player asks for another card, and busts - Lose function

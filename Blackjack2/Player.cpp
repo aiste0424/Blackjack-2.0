@@ -64,3 +64,8 @@ void Player::MakeChoice(Deck& deck)
         m_error.ValidInput(m_choice);
     }
 }
+
+void Player::ResetScore(Score score)
+{
+    m_score.ResetScore();
+}

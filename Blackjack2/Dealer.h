@@ -11,6 +11,7 @@ public:
 	void ResetScore();
 	void DrawCard(Deck deck);
 	int GetScore(Score score);   //Gergo did this function to pull player/dealer score for the outcomes
+	void ResetScore(Score score); //simas
 
 private:
 
