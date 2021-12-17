@@ -12,7 +12,7 @@ public:
 	int GetScore(Deck deck);
 
 	void DrawCard(Deck deck);
-	bool MakeChoice(); //0 - no card; 1 - gimme one 
+	bool MakeChoice(); //0 - no card; 1 - gimme one Simas
 
 private:
 

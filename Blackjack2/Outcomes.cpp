@@ -19,11 +19,6 @@ void Outcomes::SetResult(bool win, bool lose, bool draw, bool blackjack)
     m_blackjack = blackjack;
 }
 
-//void WinLoseDrawCond::SetScore(int score)
-//{
-//
-//}
-
 bool Outcomes::Win(Player player, Dealer dealer, Deck deck)
 {
     if (dealer.GetScore(deck) < player.GetScore(deck) < 22 ||
@@ -53,13 +48,14 @@ bool Outcomes::Draw(Player player, Dealer dealer, Deck deck)
     }
 }
 
-void Outcomes::IsBlackjack(Player player, Dealer dealer, Deck deck)
+bool Outcomes::IsBlackjack(Player player, Dealer dealer, Deck deck)
 {
     if (player.GetScore(deck) == 21 ||
         dealer.GetScore(deck) == 21)
     {
         m_blackjack = true;
         std::cout << "You have a BLACKJACK!" << std::endl;
+        return m_blackjack;
     }
 }
 

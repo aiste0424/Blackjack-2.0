@@ -18,7 +18,7 @@ public:
 	bool Win(Player player, Dealer dealer, Deck deck);
 	bool Lose(Player player, Dealer dealer, Deck deck);
 	bool Draw(Player player, Dealer dealer, Deck deck);
-	void IsBlackjack(Player player, Dealer dealer, Deck deck);
+	bool IsBlackjack(Player player, Dealer dealer, Deck deck); //changed from void to bool, Simas
 
 	void PrintResult();
 

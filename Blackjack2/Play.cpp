@@ -24,29 +24,34 @@ void Play::TheDeal()
     m_player.DrawCard(m_deck);
     m_deck.CardTaken();
 
-    //============== 2nd card for DEALER =========
-    m_dealer.DrawCard(m_deck);
-    m_deck.CardTaken();
-
     //============== Does Player have a BLACKJACK ==========
-    m_blackjack.IsBlackjack(m_player, m_dealer, m_deck);   //Checks if player has blackjack
-
-
-    //============== Make a choice ========== 
-    if (m_player.MakeChoice() == 0) //player doesn't want a card
+    if (m_blackjack.IsBlackjack(m_player, m_dealer, m_deck) == true)//Checks if player has blackjack
     {
-        //start dealing for the dealer
-        std::cout<<"Player gets no more cards"<<std::endl;
+        m_blackjack.Win(m_player, m_dealer, m_deck);
+
     }
-    else //player wants a card
+    else
     {
-        for (int i = 0; m_deck.GetValue() <= 21; i++)
-        {
-            m_player.DrawCard(m_deck);
+        //============== 2nd card for DEALER =========
+        m_dealer.DrawCard(m_deck);
+        m_deck.CardTaken();
+    
+        //if (m_dealer.IsBlackjack(m_player, m_dealer, m_deck)==true)
 
-            system("pause");
+        //============== Make a choice ========== 
+        if (m_player.MakeChoice() == 0) //player doesn't want a card
+        {
+            //start dealing for the dealer
+            std::cout<<"Player gets no more cards"<<std::endl;
         }
-        
+        else //player wants a card
+        {
+            for (int i = 0; m_deck.GetValue() <= 21; i++)
+            {
+                m_player.DrawCard(m_deck);
+                system("pause");
+            }
+        }
     }
     system("pause");
 }
