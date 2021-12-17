@@ -1,6 +1,8 @@
 #include "ErrorCatching.h"
+#include "Player.h"
 #include <iostream>
 
+//checking input when the player starts the game
 void ErrorCatching::ValidInput(int input)
 {
 	while (input != 1)
@@ -13,21 +15,11 @@ void ErrorCatching::ValidInput(int input)
     system("CLS");
 }
 
-void ErrorCatching::ValidAceValue(int input)
-{
-    while (input != 1 && input != 11)
-    {
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
-        std::cout << "Try again\n";
-        std::cin >> input;
-    }
-    system("CLS");
-}
-
+//checks the input when the player chooses whether
+//they want a new card or not
 void ErrorCatching::ValidAnswer(int input)
 {
-    while (input != 0 && input != 1)
+    while (input != static_cast<int>(Player::Choice::No) && input != static_cast<int>(Player::Choice::Yes))
     {
         std::cin.clear();
         std::cin.ignore(10000, '\n');

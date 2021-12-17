@@ -31,12 +31,6 @@
     <Filter Include="Source Files\Extras">
       <UniqueIdentifier>{248d304b-54c7-41df-89d0-fe6e7dae5376}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game Objects">
-      <UniqueIdentifier>{45ed0e56-cc3b-4362-82c3-78a142ec6d0f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game Objects">
-      <UniqueIdentifier>{cc34bb13-c8a3-46e6-89b8-3f6913d5f702}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Play.cpp">
@@ -54,20 +48,20 @@
     <ClCompile Include="ErrorCatching.cpp">
       <Filter>Source Files\Extras</Filter>
     </ClCompile>
-    <ClCompile Include="Dealer.cpp">
-      <Filter>Source Files\Game Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Game Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="Deck.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Dealer.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
     <ClCompile Include="Outcomes.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,17 +80,17 @@
     <ClInclude Include="ErrorCatching.h">
       <Filter>Header Files\Extras</Filter>
     </ClInclude>
-    <ClInclude Include="Dealer.h">
-      <Filter>Header Files\Game Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\Game Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Deck.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Dealer.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
     <ClInclude Include="Outcomes.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
