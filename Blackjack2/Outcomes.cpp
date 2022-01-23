@@ -20,8 +20,10 @@ void Outcomes::SetResult(bool win, bool lose, bool draw, bool blackjack)
 
 void Outcomes::Win(Player player, Dealer dealer, Score score)
 {
-    if (dealer.GetScore(score) < player.GetScore(score) < 22 ||
-        dealer.GetScore(score) > 21 && player.GetScore(score) < 22)
+    if (dealer.GetScore(score) < player.GetScore(score) &&
+		player.GetScore(score) < 22 ||
+        dealer.GetScore(score) > 21 &&
+		player.GetScore(score) < 22)
     {
         m_win = true;
         std::cout << "Player wins!" << std::endl;
@@ -33,7 +35,8 @@ void Outcomes::Win(Player player, Dealer dealer, Score score)
 
 void Outcomes::Lose(Player player, Dealer dealer, Score score)
 {
-    if (player.GetScore(score) < dealer.GetScore(score) < 22 ||
+    if (player.GetScore(score) < dealer.GetScore(score) &&
+		player.GetScore(score) < 22 ||
         player.GetScore(score) > 21)
     {
         m_lose = true;
