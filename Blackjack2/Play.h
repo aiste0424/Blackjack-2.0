@@ -4,6 +4,7 @@
 #include "Dealer.h"
 #include "Player.h"
 #include "Outcomes.h"
+#include "DoublesSplits.h"
 #include "ErrorCatching.h"
 
 class Play
@@ -29,5 +30,7 @@ private:
     Dealer m_dealer;
     Player m_player;
     Outcomes m_outcome;
+	DoublesSplits m_split;
+	DoublesSplits m_doubleDown;
     ErrorCatching m_error;
 };

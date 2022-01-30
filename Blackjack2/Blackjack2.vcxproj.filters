@@ -63,6 +63,9 @@
     <ClCompile Include="Outcomes.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="DoublesSplits.cpp">
+      <Filter>Source Files\Extras</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Play.h">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="Outcomes.h">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DoublesSplits.h">
+      <Filter>Header Files\Extras</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

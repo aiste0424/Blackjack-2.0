@@ -2,9 +2,11 @@
 #include "Play.h"
 #include "ErrorCatching.h"
 #include <iostream>
+
 //=================================
 //   MADE BY Aiste Simonaityte   //
 //=================================
+
 int main()
 {
 	Play m_play;

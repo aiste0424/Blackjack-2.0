@@ -142,6 +142,7 @@
     <ClCompile Include="Cards.cpp" />
     <ClCompile Include="Dealer.cpp" />
     <ClCompile Include="Deck.cpp" />
+    <ClCompile Include="DoublesSplits.cpp" />
     <ClCompile Include="ErrorCatching.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Outcomes.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Cards.h" />
     <ClInclude Include="Dealer.h" />
     <ClInclude Include="Deck.h" />
+    <ClInclude Include="DoublesSplits.h" />
     <ClInclude Include="ErrorCatching.h" />
     <ClInclude Include="Outcomes.h" />
     <ClInclude Include="Play.h" />

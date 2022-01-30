@@ -7,9 +7,8 @@ void Play::MainGame()
     //============== Make a choice ========== 
      
     while (m_player.GetChoice() == static_cast<int>(Player::Choice::Yes) ||   //loop player choices  Yes/No
-           m_player.GetScore(m_score) < 21)     //this line is the reason why it inappropriatry offers another card at the end of some hands.
+           m_player.GetScore(m_score) < 21)
     {
-        std::cout << "you enter the loop" << std::endl;
         m_player.MakeChoice(m_deck);
 
         if (m_player.GetScore(m_score) > 21)      //If the player asks for another card, and busts - Lose function
@@ -26,7 +25,7 @@ void Play::MainGame()
 
             } while (m_dealer.GetScore(m_score) < 17);
 
-            if (m_dealer.GetScore(m_score) <= 17 &&   //Defining possible win conditions after player chooses no more cards
+            if (m_dealer.GetScore(m_score) <= 17 &&   //Defining win conditions after player chooses no more cards
                 m_player.GetScore(m_score) <= 21 &&
                 m_player.GetScore(m_score) > m_dealer.GetScore(m_score) ||
                 m_dealer.GetScore(m_score) > 21 &&
@@ -65,8 +64,13 @@ void Play::TheDeal()
     PlayerTurn();
     PauseClear();
 
-    //============== Does Player have a BLACKJACK ==========
+    //======= Does Player have a BLACKJACK =======
     m_outcome.IsBlackjack(m_player, m_dealer, m_score);// Gergo
+
+    //=========== INSERT DOUBLE/SPLIT HERE =======
+
+
+	
 }
 //Aiste's 3 functions
 //TODO proper pause/clear in the next assignment 

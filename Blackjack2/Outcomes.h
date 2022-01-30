@@ -6,9 +6,11 @@
 #include "Player.h"
 #include "Dealer.h"
 #include "Start.h"
+
 //=================================
 //      MADE BY Gergo Varga      //
 //=================================
+
 class Outcomes
 {
 public:
