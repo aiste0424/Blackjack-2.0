@@ -55,7 +55,7 @@ void Deck::SetRandomRank()
 //the deck itself starts from (0,0). Without it all the values are increased by 2.
 int Deck::GetValue()
 {
-	return m_deck[m_randomSuit][m_randomRank-2].GetValue();
+	return m_deck[m_randomSuit][m_randomRank - 2].GetValue();
 }
 
 void Deck::PrintPicture()

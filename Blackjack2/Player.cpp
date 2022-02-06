@@ -25,7 +25,6 @@ void Player::DrawCard(Deck& deck)
     deck.PrintCurrentCardRank();
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
-
 }
 
 void Player::ResetScore()

@@ -20,10 +20,13 @@ public:
 
 private:
 
+	int m_choice;
 	bool m_doubleDown;
 	bool m_split;
+
 	Score m_score;
 	Player m_player;
 	Deck m_deck;
-};
+	ErrorCatching m_error;
 
+};

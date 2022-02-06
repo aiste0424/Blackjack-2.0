@@ -35,7 +35,7 @@ void Play::MainGame()
                 break;
             }
             else if (m_player.GetScore(m_score) ==  //Defining Tie conditions after player chooses no more cards
-                m_dealer.GetScore(m_score))
+					 m_dealer.GetScore(m_score))
             {
                 m_outcome.Draw(m_player, m_dealer, m_score);
                 break;
@@ -68,9 +68,8 @@ void Play::TheDeal()
     m_outcome.IsBlackjack(m_player, m_dealer, m_score);// Gergo
 
     //=========== INSERT DOUBLE/SPLIT HERE =======
-
-
-	
+	m_doubleDown.DoubleDown(m_player, m_score /*bet*/);
+	m_split.Split(m_player, m_score /*bet*/);
 }
 //Aiste's 3 functions
 //TODO proper pause/clear in the next assignment 
