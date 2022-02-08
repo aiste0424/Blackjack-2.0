@@ -1,11 +1,6 @@
 #include "Dealer.h"
 #include <iostream>
 
-void Dealer::ResetScore()
-{
-    m_score.SetScore(0);
-}
-
 //Aiste's function
 void Dealer::DrawCard(Deck& deck)
 {

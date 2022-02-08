@@ -1,4 +1,5 @@
 #pragma once
+#include "Cash.h"
 #include "Deck.h"
 #include "Score.h"
 #include "ErrorCatching.h"
@@ -16,7 +17,6 @@ public:
 
 	Player();
 	void DrawCard(Deck& deck);
-	void ResetScore();
 
 	//Gergo's functions
 	int GetScore(Score score);   //pulls player/dealer score for the outcomes
@@ -25,11 +25,17 @@ public:
 	//Simas' function
 	void MakeChoice(Deck& deck);
 	void ResetScore(Score score);
+	void ShowCash();
+	bool IsBankrupt();
+
+	int GetCash(Cash totalCash);
+
 
 private:
 
 	int m_choice;
 
+	Cash m_totalCash;
 	Deck m_deck;
 	Score m_score;
 	ErrorCatching m_error;

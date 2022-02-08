@@ -27,11 +27,6 @@ void Player::DrawCard(Deck& deck)
     deck.PrintPicture();
 }
 
-void Player::ResetScore()
-{
-    m_score.SetScore(0);
-}
-
 //Gergo's 2 functions
 int Player::GetScore(Score score)
 {
@@ -67,4 +62,26 @@ void Player::MakeChoice(Deck& deck)
 void Player::ResetScore(Score score)
 {
     m_score.SetScore(0);
+}
+
+void Player::ShowCash()
+{
+    return m_totalCash.PrintCash();
+}
+
+bool Player::IsBankrupt()
+{
+    if (m_totalCash.GetCash() < 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int Player::GetCash(Cash totalCash)
+{
+    return m_totalCash.GetCash();
 }

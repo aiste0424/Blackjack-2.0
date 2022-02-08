@@ -17,20 +17,18 @@ int main()
 
 	while (isGameRunning)
 	{	
-		m_start.ShowIntroduction();
-		m_play.TheDeal();
-		m_play.MainGame();
-		std::cout << "Would you like to play again? [0/1]";
-		std::cin >> m_replay;
-		m_error.ValidAnswer(m_replay);
-		if (m_replay == static_cast<int>(Player::Choice::No))
+		m_start.ShowIntroduction(); // introduces the game
+
+		//play game while you have money
+		while (m_play.EnoughHoney()==true);
 		{
-			isGameRunning = false;
+			m_play.TheDeal(); // player see first 3 cards and has to make a bet based on those cards
+			m_play.TheBet(); // since you have money -> make a bet
+			m_play.MainGame();
 		}
-		else
-		{
-			m_play.Restart();
-		}
+		//no more money - restart
+		m_play.Restart();
+	
 	}
 	
 	return 0;

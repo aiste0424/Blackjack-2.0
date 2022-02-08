@@ -1,4 +1,5 @@
 #pragma once
+#include "Cash.h"
 #include "Deck.h"
 #include "Score.h"
 #include "Dealer.h"
@@ -21,10 +22,13 @@ public:
     //Gergo's function
     void MainGame();
 
-    void ResetScores();
+    //Simas's function
+    bool EnoughHoney();
+    void TheBet();
 
 private:
-
+    
+    int bet;
     Deck m_deck;
     Score m_score;
     Dealer m_dealer;

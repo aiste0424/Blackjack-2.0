@@ -6,6 +6,13 @@ void Play::MainGame()
 {
     //============== Make a choice ========== 
      
+<<<<<<< HEAD
+   // while (m_player.GetChoice() == static_cast<int>(Player::Choice::Yes) ||   //loop player choices  Yes/No
+    //       m_player.GetScore(m_score) < 21)     //this line is the reason why it inappropriatry offers another card at the end of some hands.
+    
+    do{
+        std::cout << "--------------you enter the loop-----------------" << std::endl;
+=======
     while (m_player.GetChoice() == static_cast<int>(Player::Choice::Yes) ||   //loop player choices  Yes/No
            m_player.GetScore(m_score) < 21)
     {
@@ -46,12 +53,56 @@ void Play::MainGame()
                 break;
             }
         }
+    } while (m_player.GetChoice() == static_cast<int>(Player::Choice::Yes) ||   //loop player choices  Yes/No
+        m_player.GetScore(m_score) < 21);
+}
+
+bool Play::EnoughHoney()
+{
+    if (m_player.IsBankrupt() == true)
+    {
+        std::cout << "player is bankrupt" << std::endl;
+        m_player.ShowCash();
+        system("pause");
+        return false;
     }
+    else
+    {
+        std::cout << "player has ";
+        m_player.ShowCash();
+        std::cout << " coins" << std::endl;
+        system("pause");
+    }
+}
+
+void Play::TheBet()
+{
+    std::cout << "How many coins you will risk?" << std::endl;
+    std::cout << "| 5 | | 10 | | 20 | | 50 |" << std::endl;
+    std::cout << "  1     2       3     4 " << std::endl;
+    std::cin >> bet;
+
 }
 
 //Aiste's function
 void Play::TheDeal()
 {
+<<<<<<< HEAD
+     //============== 1st card to PLAYER ==========
+     PlayerTurn();
+     PauseClear();
+
+     //============== 1st card for DEALER =========
+     DealerTurn();
+     PauseClear();
+
+     //============== 2nd card for PLAYER =========
+     PlayerTurn();
+     PauseClear();
+
+     //============== Does Player have a BLACKJACK ==========
+     m_outcome.IsBlackjack(m_player, m_dealer, m_score);// Gergo
+=======
     //============== 1st card to PLAYER ==========
     PlayerTurn();
     PauseClear();
@@ -95,6 +146,8 @@ void Play::Restart()
 {
     std::cout << "The game has been reset";
     m_deck.ResetCards();
-    m_dealer.ResetScore();
-    m_player.ResetScore();
+    m_dealer.ResetScore(m_score);
+    m_player.ResetScore(m_score);
+
+    system("CLS");
 }

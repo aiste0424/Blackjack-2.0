@@ -25,6 +25,12 @@ void Score::UpdateScore()
 	m_score = m_score + m_cardValue;
 }
 
+int Score::ResetScore()
+{
+	m_score = 0;
+	return m_score;
+}
+
 int Score::GetScore()
 {
 	return m_score;
