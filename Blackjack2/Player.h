@@ -28,8 +28,8 @@ public:
 	void ShowCash();
 	bool IsBankrupt();
 
+	void ResetCash();
 	int GetCash(Cash totalCash);
-
 
 private:
 

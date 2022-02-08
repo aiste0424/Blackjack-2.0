@@ -81,6 +81,11 @@ bool Player::IsBankrupt()
     }
 }
 
+void Player::ResetCash()
+{
+    m_totalCash.SetCash(1000);
+}
+
 int Player::GetCash(Cash totalCash)
 {
     return m_totalCash.GetCash();

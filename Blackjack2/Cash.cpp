@@ -4,7 +4,7 @@
 Cash::Cash()
 {
 	m_betValue = 0;
-	m_totalCash = 10;
+	m_totalCash = -10;
 }
 
 int Cash::GetCash()
