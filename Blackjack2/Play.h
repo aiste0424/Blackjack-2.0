@@ -29,6 +29,7 @@ public:
 private:
     
     int bet;
+    Cash m_cash;
     Deck m_deck;
     Score m_score;
     Dealer m_dealer;

@@ -90,3 +90,13 @@ int Player::GetCash(Cash totalCash)
 {
     return m_totalCash.GetCash();
 }
+
+void Player::PickBet(Cash betValue)
+{
+    std::cout << "How many coins you will risk?" << std::endl;
+    std::cout << "| 5 | | 10 | | 20 | | 50 |" << std::endl;
+    std::cout << "  1     2       3     4 " << std::endl;
+    std::cin >> bet;
+    bet = betValue.GetBetValue();
+
+}

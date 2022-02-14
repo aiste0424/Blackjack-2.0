@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Cash.h"
 #include "Deck.h"
 #include "Score.h"
 #include "Player.h"
@@ -19,10 +20,10 @@ public:
 
 	void SetResult(bool win, bool lose, bool draw, bool blackjack); //setting all to false by default
 
-	void Win(Player player, Dealer dealer, Score score);   //I needed to inherit player, dealer and score as factors of the outcome
-	void Lose(Player player, Dealer dealer, Score score);
-	void Draw(Player player, Dealer dealer, Score score);
-	void IsBlackjack(Player player, Dealer dealer, Score score); //Checking for blackjacks
+	void Win(Player player, Dealer dealer, Score score, Cash cash);   //I needed to inherit player, dealer and score as factors of the outcome
+	void Lose(Player player, Dealer dealer, Score score, Cash cash);
+	void Draw(Player player, Dealer dealer, Score score, Cash cash);
+	void IsBlackjack(Player player, Dealer dealer, Score score, Cash cash); //Checking for blackjacks
 
 private:
 

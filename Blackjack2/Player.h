@@ -7,7 +7,6 @@
 class Player
 {
 public:
-
 	//Aiste's enum class and 2 functions
 	enum class Choice
 	{
@@ -26,15 +25,19 @@ public:
 	void MakeChoice(Deck& deck);
 	void ResetScore(Score score);
 	void ShowCash();
+
 	bool IsBankrupt();
 
 	void ResetCash();
 	int GetCash(Cash totalCash);
+	void PickBet(Cash betValue);
 
 private:
 
+	int bet;
 	int m_choice;
 
+	Cash m_betValue;
 	Cash m_totalCash;
 	Deck m_deck;
 	Score m_score;

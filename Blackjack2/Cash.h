@@ -12,8 +12,10 @@ public:
 	int GetCash();
 	void SetCash(int cash);
 	void PrintCash();
+	
 	void AddToCash(); // add bet value to cash
 	void MinusCash(); // take away bet value from cash
+	
 	void ResetCash();//replayability purposes
 
 	//get a value of the current bet 
@@ -23,7 +25,9 @@ public:
 
 private:
 
-	int m_bet[4] = { 5, 10, 20, 50 }; //possible variations to bet. indexes 0,1,2,3
+	int m_bet; //possible variations to bet. indexes 0,1,2,3 // 
+	
 	int m_betValue;
+
 	int m_totalCash;
 };

@@ -3,8 +3,8 @@
 
 Cash::Cash()
 {
-	m_betValue = 0;
-	m_totalCash = -10;
+	m_betValue = 10;
+	m_totalCash = 100;
 }
 
 int Cash::GetCash()
