@@ -5,8 +5,7 @@ Cash::Cash()
 {
 	m_totalCash = 100;
 	
-	m_maxBet = m_totalCash + 1;
-	
+	m_maxBet = m_totalCash + 1;	
 }
 
 int Cash::GetCash()
@@ -19,22 +18,22 @@ void Cash::SetCash(int cash)
 	m_totalCash = cash;
 }
 
-void Cash::PrintCash()
+void Cash::PrintCash()     //This is what should print the total with the updated, doubled bet, but doesn't
 {
 	std::cout << m_totalCash;
 }
 
-void Cash::PrintBet()
+void Cash::PrintBet()   //this works
 {
 	std::cout << m_bets;
 }
 
-void Cash::AddToCash()
+void Cash::AddToCash()   //this works, but not with the doubled bet
 {
 	m_totalCash = m_totalCash + m_bets;
 }
 
-void Cash::MinusCash()
+void Cash::MinusCash()    //same happens as with the added bet
 {
 	m_totalCash = m_totalCash - m_bets;
 }
@@ -44,13 +43,12 @@ void Cash::ResetCash()
 	m_totalCash = 100;
 }
 
-void Cash::UpdateBet()
+void Cash::UpdateBet()     //This is how I made it double
 {
 	m_bets = m_bets * 2;
 }
 
-
-int Cash::GetBet()
+int Cash::GetBet()   //this gets the players bet input
 {
 	return m_bets;
 }

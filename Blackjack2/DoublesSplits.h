@@ -2,6 +2,7 @@
 #include "Cash.h"
 #include "Deck.h"
 #include "Player.h"
+#include "Dealer.h"
 #include "Score.h"
 #include <string>
 #include <iostream>
@@ -16,7 +17,7 @@ public:
 
 	DoublesSplits();
 
-	void DoubleDown(Player player, Score score, Cash cash);
+	void DoubleDown(Player player, Dealer dealer, Score score, Cash cash);
 	void Split(Player player, Score score);
 
 	bool IsDouble();

@@ -6,8 +6,8 @@ void Play::MainGame()   //Gergo's function
     while (m_player.GetChoice() == static_cast<int>(Player::Choice::Yes) ||   //loop player choices if they want a card, or not + conditions
            m_player.GetScore(m_score) < 21 ||
            m_player.IsBankrupt() == false )
-    {
-        m_player.MakeChoice(m_deck);
+    {                
+           m_player.MakeChoice(m_deck);        
 
         if (m_player.GetScore(m_score) > 21)      //If the player asks for another card, and busts - Lose function
         {
@@ -116,7 +116,7 @@ void Play::TheDeal(DoublesSplits doubles)   //Aiste's function
         m_outcome.IsBlackjack(m_player, m_dealer, m_score, m_cash, m_doubles); // Gergo
 
         //=========== INSERT DOUBLE/SPLIT HERE =======
-        doubles.DoubleDown(m_player, m_score, m_cash);
+        m_doubles.DoubleDown(m_player, m_dealer, m_score, m_cash);
         //m_split.Split(m_player, m_score /*bet*/); -->if first 2 cards values are the same. Don't ask otherwise!
     }
     else if (m_player.IsBankrupt() == true)

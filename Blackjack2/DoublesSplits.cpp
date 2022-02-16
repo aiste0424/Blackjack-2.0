@@ -7,7 +7,7 @@ DoublesSplits::DoublesSplits()
 	m_choice = 0;
 }
 
-void DoublesSplits::DoubleDown(Player player, Score score, Cash cash)
+void DoublesSplits::DoubleDown(Player player, Dealer dealer, Score score, Cash cash)
 {
 	std::cout << "Would you like to double? [1/0]" << std::endl;
 	std::cin >> m_choice;
@@ -20,12 +20,13 @@ void DoublesSplits::DoubleDown(Player player, Score score, Cash cash)
 		std::cout << " " << std::endl;
 		std::cout << "You get only one more card. The dealer comes afterwards." << std::endl;
 
-		player.GetBet(cash);
-		cash.UpdateBet();
+		player.GetBet(cash);  //this is the bet the player places
+		cash.UpdateBet();  //this is the function, that doubles the bet
 		std::cout << "Your current bet is " << std::endl;
-		cash.PrintBet();
+		cash.PrintBet();  //it prints the doubled bet correctly
 
 		system("pause");
+
 	}
 	else if (m_choice == static_cast<int>(Player::Choice::No))
 	{
@@ -61,10 +62,10 @@ void DoublesSplits::Split(Player player, Score score)
 
 bool DoublesSplits::IsDouble()
 {
-	return m_doubleDown == true;
+	return m_doubleDown;	
 }
 
 bool DoublesSplits::IsSplit()
 {
-	return m_split == true;
+	return m_split;
 }

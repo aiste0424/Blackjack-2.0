@@ -37,6 +37,11 @@ int Player::GetChoice()
     return m_choice;
 }
 
+void Player::UpdateBet(Cash bet)
+{
+    return m_betValue.UpdateBet();
+}
+
 //Simas' function
 void Player::MakeChoice(Deck& deck)
 {

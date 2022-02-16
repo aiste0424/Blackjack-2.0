@@ -27,10 +27,10 @@ void Outcomes::Win(Player player, Dealer dealer, Score score, Cash cash, Doubles
     {
         m_win = true;
 
-        if (doubles.IsDouble() == true)
+        if (doubles.IsDouble())    //this is how I tried to differentiate between doubled and not doubled payouts
         {
-            cash.UpdateBet();
-            cash.AddToCash();
+            cash.UpdateBet();  //This is the updated bet
+            cash.AddToCash();  //add to total function called here
         }
         else
         {
@@ -56,7 +56,7 @@ void Outcomes::Lose(Player player, Dealer dealer, Score score, Cash cash, Double
     {
         m_lose = true;
 
-        if (doubles.IsDouble() == true)
+        if (doubles.IsDouble())
         {
             cash.UpdateBet();
             cash.MinusCash();

@@ -20,6 +20,7 @@ public:
 	//Gergo's functions
 	int GetScore(Score score);   //pulls player/dealer score for the outcomes
 	int GetChoice();			//pulls players input for the outcomes in Play class
+	void UpdateBet(Cash cash);
 
 	//Simas' function
 	bool IsBankrupt();
@@ -35,7 +36,6 @@ public:
 
 private:
 
-	//int bets;
 	int m_choice;
 
 	Cash m_betValue;
