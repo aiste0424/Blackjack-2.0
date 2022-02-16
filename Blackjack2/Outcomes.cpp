@@ -18,7 +18,7 @@ void Outcomes::SetResult(bool win, bool lose, bool draw, bool blackjack)
     m_blackjack = blackjack;
 }
 
-void Outcomes::Win(Player player, Dealer dealer, Score score, Cash cash)
+void Outcomes::Win(Player player, Dealer dealer, Score score, Cash cash, DoublesSplits doubles)
 {
     if (dealer.GetScore(score) < player.GetScore(score) &&
 		player.GetScore(score) < 22 ||
@@ -26,7 +26,16 @@ void Outcomes::Win(Player player, Dealer dealer, Score score, Cash cash)
 		player.GetScore(score) < 22)
     {
         m_win = true;
-        cash.AddToCash(); //adds bet value to total cash value
+
+        if (doubles.IsDouble() == true)
+        {
+            cash.UpdateBet();
+            cash.AddToCash();
+        }
+        else
+        {
+            cash.AddToCash();
+        }
   
         std::cout << "Player wins!" << std::endl;
         std::cout << "You have a total of ";
@@ -34,25 +43,37 @@ void Outcomes::Win(Player player, Dealer dealer, Score score, Cash cash)
         std::cout<<std::endl;
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
+
         system("pause");        
     }
 }
 
-void Outcomes::Lose(Player player, Dealer dealer, Score score, Cash cash)
+void Outcomes::Lose(Player player, Dealer dealer, Score score, Cash cash, DoublesSplits doubles)
 {
     if (player.GetScore(score) < dealer.GetScore(score) &&
 		player.GetScore(score) < 22 ||
         player.GetScore(score) > 21)
     {
         m_lose = true;
-        cash.MinusCash();
-        std::cout << "You have a total of ";
-        cash.PrintCash();
-        std::cout << std::endl;
+
+        if (doubles.IsDouble() == true)
+        {
+            cash.UpdateBet();
+            cash.MinusCash();
+        }
+        else
+        {
+            cash.MinusCash();
+        }
 
         std::cout << "House wins!" << std::endl;
         std::cout << "" << std::endl;
+
+        std::cout << "You have a total of ";
+        cash.PrintCash();
+        std::cout << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
+
         system("pause");
     }
 }
@@ -69,11 +90,12 @@ void Outcomes::Draw(Player player, Dealer dealer, Score score, Cash cash)
         cash.PrintCash();
         std::cout << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
+
         system("pause");
     }
 }
 
-void Outcomes::IsBlackjack(Player player, Dealer dealer, Score score, Cash cash)
+void Outcomes::IsBlackjack(Player player, Dealer dealer, Score score, Cash cash, DoublesSplits doubles)
 {
     if (player.GetScore(score) == 21)
     {

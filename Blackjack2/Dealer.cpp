@@ -8,17 +8,15 @@ void Dealer::DrawCard(Deck& deck)
     deck.SetRandomSuit();
     deck.SetRandomRank();
 
-    std::cout << "Dealer's points: ";
-    m_score.SetCardValue(deck.GetValue());
-
-    m_score.UpdateScore();
-    m_score.PrintScore();
-    std::cout << "The dealer got ";
-
+    std::cout << "The dealer has ";
     deck.PrintCurrentCardRank();
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
 
+    std::cout << "The dealer is on # ";
+    m_score.SetCardValue(deck.GetValue());
+    m_score.UpdateScore();
+    m_score.PrintScore();
 }
 //Gergo's function
 int Dealer::GetScore(Score score)

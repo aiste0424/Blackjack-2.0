@@ -1,7 +1,6 @@
 #pragma once
 #include "Cash.h"
 #include "Deck.h"
-//#include "Play.h"
 #include "Player.h"
 #include "Score.h"
 #include <string>
@@ -18,7 +17,10 @@ public:
 	DoublesSplits();
 
 	void DoubleDown(Player player, Score score, Cash cash);
-	void Split(Player player, Score score);		
+	void Split(Player player, Score score);
+
+	bool IsDouble();
+	bool IsSplit();
 
 private:
 

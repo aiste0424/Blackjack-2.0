@@ -5,7 +5,7 @@ Cash::Cash()
 {
 	m_totalCash = 100;
 	
-	m_maxBet = m_totalCash +1;
+	m_maxBet = m_totalCash + 1;
 	
 }
 
@@ -41,7 +41,7 @@ void Cash::MinusCash()
 
 void Cash::ResetCash()
 {
-	m_totalCash = 1000;
+	m_totalCash = 100;
 }
 
 void Cash::UpdateBet()
@@ -50,7 +50,7 @@ void Cash::UpdateBet()
 }
 
 
-int Cash::GetBetValue()
+int Cash::GetBet()
 {
 	return m_bets;
 }
@@ -64,12 +64,11 @@ bool Cash::ValidBet()
 {
 	if (m_bets > 9  && m_bets < m_maxBet)
 	{
-			std::cout << "bet is valid" << std::endl;
-			return true;
+		return true;
 	}
 	else
 	{
-		std::cout << "bet is not valid" << std::endl;
+		std::cout << "The bet has to be the multiples of 10. Please enter a valid bet." << std::endl;
 		return false;
 	}
 }

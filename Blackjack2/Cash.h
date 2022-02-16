@@ -12,7 +12,7 @@ public:
 	void SetBetValue(int bet);  //set a value for your bet
 
 	int GetCash();  //to make total cash appear on screen
-	int GetBetValue(); //get a value of the current bet
+	int GetBet(); //get a value of the current bet
 
 	void PrintCash(); //to print your total on screen
 	void PrintBet();  //to print your current bet on screen

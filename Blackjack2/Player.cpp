@@ -14,17 +14,16 @@ void Player::DrawCard(Deck& deck)
     deck.SetRandomSuit();
     deck.SetRandomRank();
 
-    std::cout << "Player's points: ";
-    m_score.SetCardValue(deck.GetValue());
-    
-    m_score.UpdateScore();
-    m_score.PrintScore();
-
     std::cout << "\nYou got ";
 
     deck.PrintCurrentCardRank();
     deck.PrintCurrentCardSuit();
     deck.PrintPicture();
+
+    std::cout << "Player is on #";
+    m_score.SetCardValue(deck.GetValue());    
+    m_score.UpdateScore();
+    m_score.PrintScore();
 }
 
 //Gergo's 2 functions
@@ -69,16 +68,6 @@ void Player::ShowCash()
     return m_totalCash.PrintCash();
 }
 
-void Player::LooseCash()
-{
-    return m_totalCash.MinusCash();
-}
-
-void Player::WinCash()
-{
-    return m_totalCash.AddToCash();
-}
-
 bool Player::IsBankrupt()
 {
     if (m_totalCash.GetCash() < 0)
@@ -90,20 +79,6 @@ bool Player::IsBankrupt()
         return false;
     }
 }
-
-/*bool Player::ValidBet()
-{
-    if (m_betValue.GetBetValue() > 10 )
-    {
-        std::cout << "bet is valid" << std::endl;
-        return true;
-    }
-    else
-    {
-        std::cout << "bet is not valid" << std::endl;
-        return false;
-    }
-}*/
 
 void Player::ResetCash()
 {
@@ -117,28 +92,5 @@ int Player::GetCash(Cash cash)
 
 int Player::GetBet(Cash bet)
 {
-    return m_betValue.GetBetValue();
+    return m_betValue.GetBet();
 }
-
-/*void Player::PickBet(Cash betValue)
-{
-    std::cout << "How many coins you will risk?" << std::endl;
-    std::cout << "Your minimum is 10"<<std::endl;
-    std::cin >> bets;
-    m_betValue.SetBetValue(bets);
-    std::cout << "Player bet ";
-    m_betValue.PrintBet();
-    std::cout << " coins" << std::endl;
-
-    std::cout << "you have a grand total of ";
-    m_totalCash.PrintCash(); //works
-    std::cout <<" coins" << std::endl;
-
-    //reducing the amoung we bet from what player already has
-    m_totalCash.MinusCash();
-    m_totalCash.GetCash();
-    std::cout << "After placing your bet you are left with ";
-    m_totalCash.PrintCash();
-    std::cout << " coins" << std::endl;
-
-}*/

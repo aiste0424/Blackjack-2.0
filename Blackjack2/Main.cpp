@@ -20,9 +20,7 @@ int main()
 	while (isGameRunning)
 	{	
 		m_start.ShowIntroduction(); // introduces the game
-		
-		//m_play.EnoughHoney();
-		
+				
 		m_play.TheBet();
 		m_play.TheDeal(m_doubles); // player see first 3 cards and has to make a bet based on those cards
 		m_play.MainGame();		

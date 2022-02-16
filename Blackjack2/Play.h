@@ -36,4 +36,5 @@ private:
     Player m_player;
     Outcomes m_outcome;
     ErrorCatching m_error;
+    DoublesSplits m_doubles;
 };

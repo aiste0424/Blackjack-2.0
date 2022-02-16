@@ -16,7 +16,7 @@ void DoublesSplits::DoubleDown(Player player, Score score, Cash cash)
 	{
 		m_doubleDown = true;
 
-		std::cout << "You chose to double on #" << player.GetScore(m_score) << "# points." << std::endl;
+		std::cout << "You chose to double on #" << player.GetScore(m_score) << " points." << std::endl;
 		std::cout << " " << std::endl;
 		std::cout << "You get only one more card. The dealer comes afterwards." << std::endl;
 
@@ -26,8 +26,6 @@ void DoublesSplits::DoubleDown(Player player, Score score, Cash cash)
 		cash.PrintBet();
 
 		system("pause");
-
-
 	}
 	else if (m_choice == static_cast<int>(Player::Choice::No))
 	{
@@ -59,4 +57,14 @@ void DoublesSplits::Split(Player player, Score score)
 	{
 		m_error.ValidInput(m_choice);
 	}
+}
+
+bool DoublesSplits::IsDouble()
+{
+	return m_doubleDown == true;
+}
+
+bool DoublesSplits::IsSplit()
+{
+	return m_split == true;
 }

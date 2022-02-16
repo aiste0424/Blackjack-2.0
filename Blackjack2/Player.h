@@ -31,15 +31,11 @@ public:
 	//===== Not used yet ======
 	int GetCash(Cash cash);
 	int GetBet(Cash bet);
-	void LooseCash();
 	void MakeChoice(Deck& deck);
-	void WinCash();
-	//void PickBet(Cash cash);
-	//bool ValidBet();
 
 private:
 
-	int bets;
+	//int bets;
 	int m_choice;
 
 	Cash m_betValue;
