@@ -3,9 +3,8 @@
 
 Cash::Cash()
 {
-	m_totalCash = 100;
-	
-	m_maxBet = m_totalCash + 1;	
+	m_totalCash = 100;	
+	m_maxBet = m_totalCash;	
 }
 
 int Cash::GetCash()
@@ -70,7 +69,7 @@ void Cash::SetBetValue(int bet)
 
 bool Cash::ValidBet()
 {
-	if (m_bets > 9  && m_bets < m_maxBet)
+	if (m_bets > 9  && m_bets <= m_maxBet && m_bets % 10 == 0)
 	{
 		return true;
 	}
