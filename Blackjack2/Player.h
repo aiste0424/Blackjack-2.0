@@ -24,7 +24,10 @@ public:
 	//Simas' function
 	void MakeChoice(Deck& deck);
 	void ResetScore(Score score);
-	void ShowCash();
+	void ShowCash();		//print m_totalCash value
+	void ShowNewCash();     //print m_newCash value
+	void LooseCash();
+	void WinCash();
 
 	bool IsBankrupt();
 
@@ -39,6 +42,7 @@ private:
 
 	Cash m_betValue;
 	Cash m_totalCash;
+	Cash m_newCash;
 	Deck m_deck;
 	Score m_score;
 	ErrorCatching m_error;

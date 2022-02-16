@@ -69,6 +69,21 @@ void Player::ShowCash()
     return m_totalCash.PrintCash();
 }
 
+void Player::ShowNewCash()
+{
+    return m_newCash.PrintNewCash();
+}
+
+void Player::LooseCash()
+{
+    return m_totalCash.MinusCash();
+}
+
+void Player::WinCash()
+{
+    return m_totalCash.AddToCash();
+}
+
 bool Player::IsBankrupt()
 {
     if (m_totalCash.GetCash() < 0)
@@ -94,9 +109,22 @@ int Player::GetCash(Cash totalCash)
 void Player::PickBet(Cash betValue)
 {
     std::cout << "How many coins you will risk?" << std::endl;
-    std::cout << "| 5 | | 10 | | 20 | | 50 |" << std::endl;
-    std::cout << "  1     2       3     4 " << std::endl;
+    std::cout << "Your minimum is 10"<<std::endl;
     std::cin >> bet;
-    bet = betValue.GetBetValue();
+    //setting the value for game bet
+    m_betValue.SetBetValue(bet);
+    std::cout << "Player bet ";
+    m_betValue.PrintBet();
+    std::cout << " coins" << std::endl;
+ 
+    std::cout << "you have";
+    m_totalCash.PrintCash(); //works
+    std::cout << std::endl;
+
+    //reducing the amoung we bet from what player already has
+    m_totalCash.MinusCash();
+    std::cout << "Player has left with";
+    m_totalCash.PrintCash();
+    std::cout << " coins" << std::endl;
 
 }
