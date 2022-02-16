@@ -13,7 +13,7 @@ class Play
 public:
     //Aiste's functions
     //player gets two cards, dealer gets 1. Order of the cards dealt: player -> dealer -> player.
-    void TheDeal();
+    void TheDeal(DoublesSplits doubles);
     void PauseClear();
     void PlayerTurn();
     void DealerTurn();
@@ -35,7 +35,5 @@ private:
     Dealer m_dealer;
     Player m_player;
     Outcomes m_outcome;
-	DoublesSplits m_split;
-	DoublesSplits m_doubleDown;
     ErrorCatching m_error;
 };
