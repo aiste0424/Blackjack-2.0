@@ -25,15 +25,15 @@ public:
 	void MakeChoice(Deck& deck);
 	void ResetScore(Score score);
 	void ShowCash();		//print m_totalCash value
-	void ShowNewCash();     //print m_newCash value
 	void LooseCash();
 	void WinCash();
 
 	bool IsBankrupt();
 
 	void ResetCash();
-	int GetCash(Cash totalCash);
-	void PickBet(Cash betValue);
+	void PickBet(Cash cash);
+	int GetCash(Cash cash);
+	int GetBet(Cash bet);
 
 private:
 
@@ -42,7 +42,6 @@ private:
 
 	Cash m_betValue;
 	Cash m_totalCash;
-	Cash m_newCash;
 	Deck m_deck;
 	Score m_score;
 	ErrorCatching m_error;

@@ -69,11 +69,6 @@ void Player::ShowCash()
     return m_totalCash.PrintCash();
 }
 
-void Player::ShowNewCash()
-{
-    return m_newCash.PrintNewCash();
-}
-
 void Player::LooseCash()
 {
     return m_totalCash.MinusCash();
@@ -101,9 +96,14 @@ void Player::ResetCash()
     m_totalCash.SetCash(1000);
 }
 
-int Player::GetCash(Cash totalCash)
+int Player::GetCash(Cash cash)
 {
     return m_totalCash.GetCash();
+}
+
+int Player::GetBet(Cash bet)
+{
+    return m_betValue.GetBetValue();
 }
 
 void Player::PickBet(Cash betValue)
@@ -111,8 +111,6 @@ void Player::PickBet(Cash betValue)
     std::cout << "How many coins you will risk?" << std::endl;
     std::cout << "Your minimum is 10"<<std::endl;
     std::cin >> bet;
-    //setting the value for game bet
-    m_betValue.SetBetValue(bet);
     std::cout << "Player bet ";
     m_betValue.PrintBet();
     std::cout << " coins" << std::endl;

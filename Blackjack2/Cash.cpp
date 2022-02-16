@@ -3,8 +3,7 @@
 
 Cash::Cash()
 {
-	m_betValue = 0;
-	m_newCash = 0;
+	m_bet = 10;
 	m_totalCash = 100;
 }
 
@@ -23,24 +22,19 @@ void Cash::PrintCash()
 	std::cout << m_totalCash;
 }
 
-void Cash::PrintNewCash()
-{
-	std::cout << m_newCash;
-}
-
 void Cash::PrintBet()
 {
-	std::cout << m_betValue;
+	std::cout << m_bet;
 }
 
 void Cash::AddToCash()
 {
-	m_totalCash=m_totalCash + m_betValue;
+	m_totalCash = m_totalCash + m_bet;
 }
 
 void Cash::MinusCash()
 {
-	m_totalCash= m_totalCash - m_betValue;
+	m_totalCash = m_totalCash - m_bet;
 }
 
 void Cash::ResetCash()
@@ -50,15 +44,15 @@ void Cash::ResetCash()
 
 void Cash::UpdateCash()
 {
-	m_newCash = m_totalCash;
+	m_bet = m_bet * 2;
 }
 
 int Cash::GetBetValue()
 {
-	return m_betValue;
+	return m_bet;
 }
 
 void Cash::SetBetValue(int bet)
 {
-	m_betValue = bet;
+	m_bet = bet;
 }
