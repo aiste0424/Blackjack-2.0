@@ -91,6 +91,20 @@ bool Player::IsBankrupt()
     }
 }
 
+/*bool Player::ValidBet()
+{
+    if (m_betValue.GetBetValue() > 10 )
+    {
+        std::cout << "bet is valid" << std::endl;
+        return true;
+    }
+    else
+    {
+        std::cout << "bet is not valid" << std::endl;
+        return false;
+    }
+}*/
+
 void Player::ResetCash()
 {
     m_totalCash.SetCash(1000);
@@ -106,7 +120,7 @@ int Player::GetBet(Cash bet)
     return m_betValue.GetBetValue();
 }
 
-void Player::PickBet(Cash betValue)
+/*void Player::PickBet(Cash betValue)
 {
     std::cout << "How many coins you will risk?" << std::endl;
     std::cout << "Your minimum is 10"<<std::endl;
@@ -128,4 +142,4 @@ void Player::PickBet(Cash betValue)
     m_totalCash.PrintCash();
     std::cout << " coins" << std::endl;
 
-}
+}*/

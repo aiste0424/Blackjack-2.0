@@ -24,9 +24,11 @@ public:
 	void UpdateCash(); //updating bet in case of split or double	
 
 	//void UpdateBetValue(); //maybe needed if doubled ???
+	bool ValidBet();
 
 private:
 
+	int m_maxBet;
 	int m_bets;	
 	int m_totalCash;
 };

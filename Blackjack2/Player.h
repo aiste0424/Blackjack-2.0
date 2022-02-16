@@ -22,18 +22,20 @@ public:
 	int GetChoice();			//pulls players input for the outcomes in Play class
 
 	//Simas' function
-	void MakeChoice(Deck& deck);
-	void ResetScore(Score score);
-	void ShowCash();		//print m_totalCash value
-	void LooseCash();
-	void WinCash();
-
 	bool IsBankrupt();
 
+	void ResetScore(Score score);
 	void ResetCash();
-	void PickBet(Cash cash);
+	void ShowCash();		//print m_totalCash value
+	
+	//===== Not used yet ======
 	int GetCash(Cash cash);
 	int GetBet(Cash bet);
+	void LooseCash();
+	void MakeChoice(Deck& deck);
+	void WinCash();
+	//void PickBet(Cash cash);
+	//bool ValidBet();
 
 private:
 

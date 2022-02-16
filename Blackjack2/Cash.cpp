@@ -3,8 +3,10 @@
 
 Cash::Cash()
 {
-
 	m_totalCash = 100;
+	
+	m_maxBet = m_totalCash +1;
+	
 }
 
 int Cash::GetCash()
@@ -55,4 +57,18 @@ int Cash::GetBetValue()
 void Cash::SetBetValue(int bet)
 {
 	m_bets = bet;
+}
+
+bool Cash::ValidBet()
+{
+	if (m_bets > 9  && m_bets < m_maxBet)
+	{
+			std::cout << "bet is valid" << std::endl;
+			return true;
+	}
+	else
+	{
+		std::cout << "bet is not valid" << std::endl;
+		return false;
+	}
 }

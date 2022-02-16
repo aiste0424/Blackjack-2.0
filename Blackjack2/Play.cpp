@@ -83,18 +83,22 @@ void Play::MainGame()
 
 void Play::TheBet()
 {
-    std::cout << "Player has ";
-    m_player.ShowCash();
-    std::cout << " coins" << std::endl;
-    std::cout << std::endl;
-    system("pause");
+    do
+    {
+        std::cout << "Player has ";
+        m_player.ShowCash();
+        std::cout << " coins" << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "How many coins you will risk?" << std::endl;
+        std::cout << "Minimum bet is 10" << std::endl;
+        std::cout << "Please, use multiples of 10 for higher bets" << std::endl;
+        std::cin >> bet;
+        m_cash.SetBetValue(bet);
+        
+        system("pause");
     
-    std::cout << "How many coins you will risk?" << std::endl;
-    std::cout << "| 5 | | 10 | | 20 | | 50 |" << std::endl;
-    std::cout << "  1     2       3     4 " << std::endl;
-    std::cin >> bet;
-    
-    m_cash.SetBetValue(bet);
+    } while (m_cash.ValidBet() == false);
 
 }
 
@@ -102,18 +106,12 @@ void Play::TheBet()
 void Play::TheDeal()
 {
     if ( m_player.IsBankrupt()==false)
-    {
-        
-        
+    {        
         //pick amount of money you will risk for the game
         //m_player.PickBet(m_cash);
-
         //reduce your total amount with amount you are betting
-
-
         //m_player.GetCash(m_cash);
-
-        std::cout << std::endl;
+        //std::cout << std::endl;
 
         //============== 1st card to PLAYER ==========
         PlayerTurn();
