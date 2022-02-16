@@ -83,6 +83,12 @@ void Play::MainGame()
 
 void Play::TheBet()
 {
+    std::cout << "Player has ";
+    m_player.ShowCash();
+    std::cout << " coins" << std::endl;
+    std::cout << std::endl;
+    system("pause");
+    
     std::cout << "How many coins you will risk?" << std::endl;
     std::cout << "| 5 | | 10 | | 20 | | 50 |" << std::endl;
     std::cout << "  1     2       3     4 " << std::endl;
@@ -97,18 +103,13 @@ void Play::TheDeal()
 {
     if ( m_player.IsBankrupt()==false)
     {
-        std::cout << "Player has ";
-        m_player.ShowCash();
-        std::cout << " coins" << std::endl;
-        std::cout << std::endl;
-        system("pause");
+        
         
         //pick amount of money you will risk for the game
-        m_player.PickBet(m_cash);
+        //m_player.PickBet(m_cash);
 
         //reduce your total amount with amount you are betting
-        m_player.ShowCash();
-        m_player.LooseCash();
+
 
         //m_player.GetCash(m_cash);
 
@@ -176,6 +177,6 @@ void Play::Restart()
     std::cout << "The game has been reset";
     m_dealer.ResetScore(m_score);
     m_player.ResetScore(m_score);
-    m_cash.ResetCash();
+   // m_cash.ResetCash();
     system("CLS");
 }

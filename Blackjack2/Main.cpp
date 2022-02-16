@@ -19,7 +19,7 @@ int main()
 	while (isGameRunning)
 	{	
 		m_start.ShowIntroduction(); // introduces the game
-	
+		m_play.TheBet();
 			m_play.TheDeal(); // player see first 3 cards and has to make a bet based on those cards
 			
 			//while loop 

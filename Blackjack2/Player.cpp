@@ -110,18 +110,21 @@ void Player::PickBet(Cash betValue)
 {
     std::cout << "How many coins you will risk?" << std::endl;
     std::cout << "Your minimum is 10"<<std::endl;
-    std::cin >> bet;
+    std::cin >> bets;
+    m_betValue.SetBetValue(bets);
     std::cout << "Player bet ";
     m_betValue.PrintBet();
     std::cout << " coins" << std::endl;
- 
-    std::cout << "you have";
+
+    std::cout << "you have a grand total of ";
     m_totalCash.PrintCash(); //works
-    std::cout << std::endl;
+    std::cout <<" coins" << std::endl;
 
     //reducing the amoung we bet from what player already has
     m_totalCash.MinusCash();
-    std::cout << "Player has left with";
+    m_totalCash.GetCash();
+    m_betValue.UpdateCash();
+    std::cout << "After placing your bet you are left with ";
     m_totalCash.PrintCash();
     std::cout << " coins" << std::endl;
 

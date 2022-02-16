@@ -37,7 +37,7 @@ public:
 
 private:
 
-	int bet;
+	int bets;
 	int m_choice;
 
 	Cash m_betValue;

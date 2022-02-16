@@ -1,7 +1,7 @@
 #pragma once
-//=================================
+//=====================
 //   MADE BY Simas   //
-//=================================
+//=====================
 class Cash
 {
 public:
@@ -16,8 +16,10 @@ public:
 
 	void PrintCash(); //to print your total on screen
 	void PrintBet();  //to print your current bet on screen
+	
 	void AddToCash(); // add bet value to total
 	void MinusCash(); // reduces amount of coins at the end of a hand if lost	
+	
 	void ResetCash(); //replayability purposes
 	void UpdateCash(); //updating bet in case of split or double	
 
@@ -25,6 +27,6 @@ public:
 
 private:
 
-	int m_bet;	
+	int m_bets;	
 	int m_totalCash;
 };
