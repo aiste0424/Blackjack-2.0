@@ -17,11 +17,13 @@ public:
 	void PrintCash(); //to print your total on screen
 	void PrintBet();  //to print your current bet on screen
 	
-	void AddToCash(); // add bet value to total
-	void MinusCash(); // reduces amount of coins at the end of a hand if lost	
+	void WinCash(); // add bet value to total
+	void LoseCash(); // reduces amount of coins at the end of a hand if lost
+	void BlackjackPay();
 	
 	void ResetCash(); //replayability purposes
 	void UpdateBet(); //updating bet in case of split or double	
+	void UpdateBJ();
 
 	//void UpdateBetValue(); //maybe needed if doubled ???
 	bool ValidBet();

@@ -113,7 +113,7 @@ void Play::TheDeal(DoublesSplits doubles)   //Aiste's function
         PauseClear();
 
         //============== Does Player have a BLACKJACK ==========
-        m_outcome.IsBlackjack(m_player, m_dealer, m_score, m_cash, m_doubles); // Gergo
+        m_outcome.IsBlackjack(m_player, m_dealer, m_score, m_cash); // Gergo
 
         //=========== INSERT DOUBLE/SPLIT HERE =======
         m_doubles.DoubleDown(m_player, m_dealer, m_score, m_cash);

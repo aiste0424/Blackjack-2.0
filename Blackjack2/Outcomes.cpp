@@ -30,11 +30,11 @@ void Outcomes::Win(Player player, Dealer dealer, Score score, Cash cash, Doubles
         if (doubles.IsDouble())    //this is how I tried to differentiate between doubled and not doubled payouts
         {
             cash.UpdateBet();  //This is the updated bet
-            cash.AddToCash();  //add to total function called here
+            cash.WinCash();  //add to total function called here
         }
         else
         {
-            cash.AddToCash();
+            cash.WinCash();
         }
   
         std::cout << "Player wins!" << std::endl;
@@ -59,11 +59,11 @@ void Outcomes::Lose(Player player, Dealer dealer, Score score, Cash cash, Double
         if (doubles.IsDouble())
         {
             cash.UpdateBet();
-            cash.MinusCash();
+            cash.LoseCash();
         }
         else
         {
-            cash.MinusCash();
+            cash.LoseCash();
         }
 
         std::cout << "House wins!" << std::endl;
@@ -95,15 +95,24 @@ void Outcomes::Draw(Player player, Dealer dealer, Score score, Cash cash)
     }
 }
 
-void Outcomes::IsBlackjack(Player player, Dealer dealer, Score score, Cash cash, DoublesSplits doubles)
+void Outcomes::IsBlackjack(Player player, Dealer dealer, Score score, Cash cash)
 {
     if (player.GetScore(score) == 21)
     {
         m_blackjack = true;
+
+        cash.UpdateBJ();
+        cash.BlackjackPay();
          
         std::cout << "Congrats! You have a BLACKJACK! " << std::endl;
         std::cout << "" << std::endl;
+
+        std::cout << "You have a total of ";
+        cash.PrintCash();
+        std::cout << std::endl;
+
         std::cout << "Press any key for a new hand." << std::endl;
+
         system("pause");
     }
     else if (dealer.GetScore(score) == 21)

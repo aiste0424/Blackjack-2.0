@@ -101,5 +101,8 @@
     <ClInclude Include="DoublesSplits.h">
       <Filter>Header Files\Extras</Filter>
     </ClInclude>
+    <ClInclude Include="Cash.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

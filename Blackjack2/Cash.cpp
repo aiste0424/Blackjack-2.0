@@ -28,14 +28,19 @@ void Cash::PrintBet()   //this works
 	std::cout << m_bets;
 }
 
-void Cash::AddToCash()   //this works, but not with the doubled bet
+void Cash::WinCash()   //this works, but not with the doubled bet
 {
 	m_totalCash = m_totalCash + m_bets;
 }
 
-void Cash::MinusCash()    //same happens as with the added bet
+void Cash::LoseCash()    //same happens as with the added bet
 {
 	m_totalCash = m_totalCash - m_bets;
+}
+
+void Cash::BlackjackPay()
+{
+	m_totalCash = m_totalCash + m_bets;
 }
 
 void Cash::ResetCash()
@@ -46,6 +51,11 @@ void Cash::ResetCash()
 void Cash::UpdateBet()     //This is how I made it double
 {
 	m_bets = m_bets * 2;
+}
+
+void Cash::UpdateBJ()
+{
+	m_bets = m_bets * 1.5;
 }
 
 int Cash::GetBet()   //this gets the players bet input

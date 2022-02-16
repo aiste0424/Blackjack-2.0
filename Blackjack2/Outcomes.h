@@ -24,7 +24,7 @@ public:
 	void Win(Player player, Dealer dealer, Score score, Cash cash, DoublesSplits doubles);   //I needed to inherit player, dealer and score as factors of the outcome
 	void Lose(Player player, Dealer dealer, Score score, Cash cash, DoublesSplits doubles);
 	void Draw(Player player, Dealer dealer, Score score, Cash cash);
-	void IsBlackjack(Player player, Dealer dealer, Score score, Cash cash, DoublesSplits doubles); //Checking for blackjacks
+	void IsBlackjack(Player player, Dealer dealer, Score score, Cash cash); //Checking for blackjacks
 
 private:
 
