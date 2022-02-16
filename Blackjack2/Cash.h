@@ -21,7 +21,7 @@ public:
 	void MinusCash(); // reduces amount of coins at the end of a hand if lost	
 	
 	void ResetCash(); //replayability purposes
-	void UpdateCash(); //updating bet in case of split or double	
+	void UpdateBet(); //updating bet in case of split or double	
 
 	//void UpdateBetValue(); //maybe needed if doubled ???
 	bool ValidBet();

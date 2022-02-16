@@ -34,11 +34,7 @@ void Outcomes::Win(Player player, Dealer dealer, Score score, Cash cash)
         std::cout<<std::endl;
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
-     //   player.ResetScore(score);
-     //   dealer.ResetScore(score);
-        system("pause");
-        
-      //  m_start.ShowIntroduction();
+        system("pause");        
     }
 }
 
@@ -54,15 +50,10 @@ void Outcomes::Lose(Player player, Dealer dealer, Score score, Cash cash)
         cash.PrintCash();
         std::cout << std::endl;
 
-        //player.ResetScore(score);
-        //dealer.ResetScore(score);
         std::cout << "House wins!" << std::endl;
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
         system("pause");
-    //    player.ResetScore(score);
-    //   dealer.ResetScore(score);
-       // m_start.ShowIntroduction();
     }
 }
 
@@ -71,8 +62,6 @@ void Outcomes::Draw(Player player, Dealer dealer, Score score, Cash cash)
     if (dealer.GetScore(score) == player.GetScore(score))
     {
         m_draw = true;
-      //  player.ResetScore(score);
-      //  dealer.ResetScore(score);
         std::cout << "It's a Stand-off!" << std::endl;
         std::cout << "" << std::endl;
       
@@ -81,9 +70,6 @@ void Outcomes::Draw(Player player, Dealer dealer, Score score, Cash cash)
         std::cout << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
         system("pause");
- //       player.ResetScore(score);
- //       dealer.ResetScore(score);
- //       m_start.ShowIntroduction();
     }
 }
 
@@ -92,17 +78,11 @@ void Outcomes::IsBlackjack(Player player, Dealer dealer, Score score, Cash cash)
     if (player.GetScore(score) == 21)
     {
         m_blackjack = true;
-        player.ResetScore(score);
-        dealer.ResetScore(score);
-  
-
+         
         std::cout << "Congrats! You have a BLACKJACK! " << std::endl;
         std::cout << "" << std::endl;
         std::cout << "Press any key for a new hand." << std::endl;
         system("pause");
-     //   player.ResetScore(score);
-     //   dealer.ResetScore(score);
-     //   m_start.ShowIntroduction();
     }
     else if (dealer.GetScore(score) == 21)
     {

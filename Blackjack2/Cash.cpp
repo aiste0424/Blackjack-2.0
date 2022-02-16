@@ -44,10 +44,11 @@ void Cash::ResetCash()
 	m_totalCash = 1000;
 }
 
-void Cash::UpdateCash()
+void Cash::UpdateBet()
 {
-	
+	m_bets = m_bets * 2;
 }
+
 
 int Cash::GetBetValue()
 {

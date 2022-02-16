@@ -137,7 +137,6 @@ int Player::GetBet(Cash bet)
     //reducing the amoung we bet from what player already has
     m_totalCash.MinusCash();
     m_totalCash.GetCash();
-    m_betValue.UpdateCash();
     std::cout << "After placing your bet you are left with ";
     m_totalCash.PrintCash();
     std::cout << " coins" << std::endl;

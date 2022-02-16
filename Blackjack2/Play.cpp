@@ -9,16 +9,13 @@ void Play::MainGame()
            m_player.GetScore(m_score) < 21 ||  //this line is the reason why it inappropriatry offers another card at the end of some hands.
            m_player.IsBankrupt() == false)     //if player bankrup dont play the main game
     {
-        std::cout << "--------------you enter the loop-----------------" << std::endl;
         m_player.MakeChoice(m_deck);
-
 
         if (m_player.GetScore(m_score) > 21)      //If the player asks for another card, and busts - Lose function
         {
             m_outcome.Lose(m_player, m_dealer, m_score, m_cash);
             break;
         }
-
 
         if (m_player.GetChoice() == static_cast<int>(Player::Choice::No))  //If player chooses no more cards, dealer pulls cards until reaches 17, or bust
         {
@@ -27,7 +24,6 @@ void Play::MainGame()
                 m_deck.CardTaken();
 
             } while (m_dealer.GetScore(m_score) < 17);
-
 
             if (m_dealer.GetScore(m_score) <= 17 &&   //Defining win conditions after player chooses no more cards
                 m_player.GetScore(m_score) <= 21 &&
@@ -103,7 +99,7 @@ void Play::TheBet()
 }
 
 //Aiste's function
-void Play::TheDeal()
+void Play::TheDeal(DoublesSplits doubles)
 {
     if ( m_player.IsBankrupt()==false)
     {        
@@ -126,15 +122,11 @@ void Play::TheDeal()
         PauseClear();
 
         //============== Does Player have a BLACKJACK ==========
-        m_outcome.IsBlackjack(m_player, m_dealer, m_score, m_cash);// Gergo
+        m_outcome.IsBlackjack(m_player, m_dealer, m_score, m_cash); // Gergo
 
-       //=========== INSERT DOUBLE/SPLIT HERE =======
-       //if enough money to split and double
-        //if ()
-        {
-            m_doubleDown.DoubleDown(m_player, m_score /*bet*/);
-            m_split.Split(m_player, m_score /*bet*/);
-        }
+        //=========== INSERT DOUBLE/SPLIT HERE =======
+        doubles.DoubleDown(m_player, m_score, m_cash);
+            //m_split.Split(m_player, m_score /*bet*/); -->if first 2 cards values are the same. Don't ask otherwise!
     }
     else if (m_player.IsBankrupt() == true)
     {
@@ -175,6 +167,6 @@ void Play::Restart()
     std::cout << "The game has been reset";
     m_dealer.ResetScore(m_score);
     m_player.ResetScore(m_score);
-   // m_cash.ResetCash();
+    m_player.GetCash(m_cash);
     system("CLS");
 }
