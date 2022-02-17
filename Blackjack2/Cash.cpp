@@ -3,6 +3,7 @@
 
 Cash::Cash()
 {
+	m_bets = 0;
 	m_totalCash = 100;	
 	m_maxBet = m_totalCash;	
 }
