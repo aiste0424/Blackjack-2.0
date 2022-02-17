@@ -14,7 +14,6 @@ public:
 	void SetScore(int score);
 	void PrintScore();
 	void UpdateScore();
-	int ResetScore();//replayability purposes
 
 	//get a value of the current card from the deck class and set it
 	void SetCardValue(int value);

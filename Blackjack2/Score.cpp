@@ -13,7 +13,6 @@ void Score::SetCardValue(int value)
 {
 	m_cardValue = value;
 }
-//TODO: implement soft hand in the next assignment
 
 void Score::PrintScore()
 {
@@ -22,13 +21,12 @@ void Score::PrintScore()
 
 void Score::UpdateScore()
 {
+	//the default ace value is 11, but if the hand busts, ace value changes to 1.
+	if (m_cardValue == 11 && m_score + m_cardValue > 21)
+	{
+		m_cardValue = 1;
+	}
 	m_score = m_score + m_cardValue;
-}
-
-int Score::ResetScore()
-{
-	m_score = 0;
-	return m_score;
 }
 
 int Score::GetScore()

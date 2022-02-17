@@ -5,57 +5,76 @@
 //=================================
 //   MADE BY Aiste Simonaityte   //
 //=================================
+
 Deck::Deck()
 {
+	//changing variable from time_t to unsigned int because of a warning "Possible loss of data"
+	srand(unsigned int(time(0)));
+
 	m_randomSuit = 0;
 	m_randomRank = 0;
 
-	//changing variable from time_t to unsigned int because of a warning "Possible loss of data"
-    srand(unsigned int(time(0)));
+	m_rankCounter = 1;
+	m_rank = 0;
+	m_value = 0;
 
 	//initializing the correct card suits, ranks and values
-    for (int i = 0; i < m_suitNumber; i++)
-    {
-        for (int j = 0; j < m_rankNumber; j++)
-        {
+	for (int i = 0; i < m_maxSuit; i++)
+	{
+		//ranks and values are reset to 2 every time a new row begins
+		m_rank = 2;
+		m_value = 2;
+		for (int j = 0; j < m_maxRank; j++)
+		{
 			m_deck[i][j].SetIsTaken(false);
 			m_deck[i][j].SetSuit(static_cast<Cards::Suit>(i));
-			m_deck[i][j].SetRank(static_cast<Cards::Rank>(j+2));
+			m_deck[i][j].SetRank(static_cast<Cards::Rank>((m_rank)));
 
-			//(j+2) instead of j, because Rank enums start from 2 and the loops & matrices start from 0.
-			if ((j+2) > static_cast<int>(Cards::Rank::Ten) && (j+2) != static_cast<int>(Cards::Rank::Ace))
+			//jack, queen and king have a value of 10.
+			if ((m_value) > static_cast<int>(Cards::Rank::Ten) && (m_value) != static_cast<int>(Cards::Rank::Ace))
 			{
 				m_deck[i][j].SetValue(static_cast<int>(Cards::Rank::Ten));
 			}
 			//ace default value is 11
-			else if ((j+2) == static_cast<int>(Cards::Rank::Ace))
+			else if ((m_value) == static_cast<int>(Cards::Rank::Ace))
 			{
 				m_deck[i][j].SetValue(static_cast<int>(Cards::Rank::Jack));
 			}
-			//the rest values
+			//the rest of the values
 			else
 			{
-				m_deck[i][j].SetValue((j+2));
+				m_deck[i][j].SetValue((m_value));
 			}
-        }
-    }
- }
+
+			//each card is repeated 6 times, because there are 6 decks being used
+			if (m_rankCounter == m_decksUsed)
+			{
+				//ranks and values are increased by one every 6 times
+				m_rankCounter = 1;
+				m_rank++;
+				m_value++;
+			}
+			else
+			{
+				m_rankCounter++;
+			}
+		}
+	}
+}
 
 void Deck::SetRandomSuit()
 {
-	m_randomSuit = rand() % m_suitNumber;
+	m_randomSuit = rand() % m_maxSuit;
 }
 
 void Deck::SetRandomRank()
 {
-	m_randomRank = rand() % m_rankNumber + 2;
+	m_randomRank = rand() % m_maxRank;
 }
 
-//2 must be deducted from rank, because it's giving a rank which starts from position 2.
-//the deck itself starts from (0,0). Without it all the values are increased by 2.
 int Deck::GetValue()
 {
-	return m_deck[m_randomSuit][m_randomRank - 2].GetValue();
+	return m_deck[m_randomSuit][m_randomRank].GetValue();
 }
 
 void Deck::PrintPicture()
@@ -92,9 +111,9 @@ void Deck::PrintPicture()
 //for replayability purposes
 void Deck::ResetCards()
 {
-	for (int i = 0; i < m_suitNumber; i++)
+	for (int i = 0; i < m_maxSuit; i++)
 	{
-		for (int j = 0; j < m_rankNumber; j++)
+		for (int j = 0; j < m_maxRank; j++)
 		{
 			m_deck[i][j].SetIsTaken(false);
 		}
@@ -103,7 +122,7 @@ void Deck::ResetCards()
 
 void Deck::PrintCurrentCardSuit()
 {
-	switch (static_cast<Cards::Suit>(m_randomSuit))
+	switch (static_cast<Cards::Suit>(m_deck[m_randomSuit][m_randomRank].GetSuit()))
 	{
 	case Cards::Suit::Clubs:
 		std::cout << " of Clubs";
@@ -125,7 +144,7 @@ void Deck::PrintCurrentCardSuit()
 
 void Deck::PrintCurrentCardRank()
 {
-	switch (static_cast<Cards::Rank>(m_randomRank))
+	switch (static_cast<Cards::Rank>(m_deck[m_randomSuit][m_randomRank].GetRank()))
 	{
 	case Cards::Rank::Jack:
 		m_symbol = "J";
@@ -141,15 +160,15 @@ void Deck::PrintCurrentCardRank()
 		m_symbol = "K";
 		std::cout << "King";
 		break;
-	
+
 	case Cards::Rank::Ace:
 		m_symbol = "A";
 		std::cout << "Ace";
 		break;
 
 	default:
-		m_symbol = std::to_string(m_randomRank);
-		std::cout << static_cast<int>(m_randomRank);
+		m_symbol = std::to_string(static_cast<int>(m_deck[m_randomSuit][m_randomRank].GetRank()));
+		std::cout << static_cast<int>(m_deck[m_randomSuit][m_randomRank].GetRank());
 		break;
 	}
 }
@@ -159,8 +178,8 @@ void Deck::CardTaken()
 	//while the card is taken, give another card
 	while (m_deck[m_randomSuit][m_randomRank].GetIsTaken() == true)
 	{
-		m_randomSuit = rand() % m_suitNumber;
-		m_randomRank = rand() % m_rankNumber + 2;
+		m_randomSuit = rand() % m_maxSuit;
+		m_randomRank = rand() % m_maxRank;
 	}
 	//if the card is picked, set to 'taken'
 	m_deck[m_randomSuit][m_randomRank].SetIsTaken(true);
