@@ -39,7 +39,7 @@ int Player::GetChoice()
 
 void Player::UpdateBet(Cash bet)
 {
-    return m_betValue.UpdateBet();
+    return m_betValue.DoubleBet();
 }
 
 //Simas' function
@@ -68,11 +68,6 @@ void Player::ResetScore(Score score)
     m_score.SetScore(0);
 }
 
-void Player::ShowCash()
-{
-    return m_totalCash.PrintCash();
-}
-
 bool Player::IsBankrupt()
 {
     if (m_totalCash.GetCash() < 0)
@@ -87,10 +82,10 @@ bool Player::IsBankrupt()
 
 void Player::ResetCash()
 {
-    m_totalCash.SetCash(1000);
+    m_totalCash.SetCash(100);
 }
 
-int Player::GetCash(Cash cash)
+int Player::GetCash()
 {
     return m_totalCash.GetCash();
 }

@@ -11,7 +11,7 @@ void Play::MainGame()   //Gergo's function
 
         if (m_player.GetScore(m_score) > 21)      //If the player asks for another card, and busts - Lose function
         {
-            m_outcome.Lose(m_player, m_dealer, m_score, m_cash, m_doubles);
+            m_outcome.Lose(&m_player, &m_dealer, m_score, m_cash, m_doubles);
             break;
         }
 
@@ -28,18 +28,18 @@ void Play::MainGame()   //Gergo's function
                 m_dealer.GetScore(m_score) > 21 &&
                 m_player.GetScore(m_score) <= 21)
             {
-                m_outcome.Win(m_player, m_dealer, m_score, m_cash, m_doubles);
+                m_outcome.Win(&m_player, &m_dealer, m_score, m_cash, m_doubles);
                 break;
             }
             else if (m_player.GetScore(m_score) ==  //Defining Tie conditions after player chooses no more cards
                      m_dealer.GetScore(m_score))
             {
-                m_outcome.Draw(m_player, m_dealer, m_score, m_cash);
+                m_outcome.Draw(&m_player, &m_dealer, m_score, m_cash);
                 break;
             }
             else   //Any other case than the above, player loses
             {
-                m_outcome.Lose(m_player, m_dealer, m_score, m_cash, m_doubles);
+                m_outcome.Lose(&m_player, &m_dealer, m_score, m_cash, m_doubles);
                 break;
             }
         }
@@ -65,10 +65,7 @@ bool Play::EnoughHoney()   //Simas's function'
     }
     else
     {
-        std::cout << "Player has ";
-        m_player.ShowCash();
-        std::cout << " coins" << std::endl;
-        std::cout << std::endl;
+        std::cout << "Player has " << m_cash.GetCash() << " coins\n" << std::endl;
         system("pause");
         return true;
     }
@@ -76,29 +73,22 @@ bool Play::EnoughHoney()   //Simas's function'
 
 void Play::TheBet()   //Simas's function'
 {
-    do
-    {
-        std::cout << "Player has ";
-        m_player.ShowCash();
-        std::cout << " coins" << std::endl;
-        std::cout << std::endl;
-        std::cout << "Place your bet please. It has to be the multiples of 10." << std::endl;
-        std::cout << std::endl;
-        std::cout << "Minimum bet is 10" << std::endl;
-
-        std::cin >> bet;
-
-        m_cash.SetBetValue(bet);
-        std::cout << "You put " << m_cash.GetBet() << " as your stake. Good luck!" << std::endl;
-
-        system("pause");
-
-    } while (m_cash.ValidBet() == false);
+    std::cout << "Player has " << m_player.GetCash() << " coins\n" << std::endl;
+    std::cout << "Place your bets, please. It has to be multiples of 10.\n" << std::endl;
+    std::cout << "Minimum bet is 10." << std::endl;
+    std::cin >> m_bet;
+    
+    //checks if the bet is valid in the ValidInputCheck class, returns the latest answer and sets
+    //the bet
+    m_cash.SetBetValue(m_error.ValidBet(m_bet, m_cash));
+    
+    std::cout << "You put " << m_cash.GetBet() << " as your stake. Good luck!" << std::endl;
+    system("pause");
 }
 
-void Play::TheDeal(DoublesSplits doubles)   //Aiste's function
+void Play::TheDeal(Doubles doubles)   //Aiste's function
 {
-    if ( m_player.IsBankrupt()==false)
+    if (m_player.IsBankrupt() == false)
     {        
         //============== 1st card to PLAYER ==========
         PlayerTurn();
@@ -113,11 +103,10 @@ void Play::TheDeal(DoublesSplits doubles)   //Aiste's function
         PauseClear();
 
         //============== Does Player have a BLACKJACK ==========
-        m_outcome.IsBlackjack(m_player, m_dealer, m_score, m_cash); // Gergo
+        m_outcome.IsBlackjack(&m_player, &m_dealer, m_score, m_cash); // Gergo
 
-        //=========== INSERT DOUBLE/SPLIT HERE =======
-        m_doubles.DoubleDown(m_player, m_dealer, m_score, m_cash);
-        //m_split.Split(m_player, m_score /*bet*/); -->if first 2 cards values are the same. Don't ask otherwise!
+        //=========== Does player want to double the bet =======
+        m_doubles.DoubleDown(&m_player, m_score, m_cash);
     }
     else if (m_player.IsBankrupt() == true)
     {
@@ -132,8 +121,12 @@ void Play::TheDeal(DoublesSplits doubles)   //Aiste's function
     }
 }
 
+void Play::Double()
+{
+    
+}
+
 //Aiste's 3 functions
-//TODO proper pause/clear in the next assignment 
 void Play::PauseClear()
 {
     system("pause");
@@ -157,6 +150,5 @@ void Play::Restart()   //Simas's function
     std::cout << "The game has been reset";
     m_dealer.ResetScore(m_score);
     m_player.ResetScore(m_score);
-    m_player.GetCash(m_cash);
     system("CLS");
 }

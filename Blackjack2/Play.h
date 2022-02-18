@@ -5,15 +5,16 @@
 #include "Dealer.h"
 #include "Player.h"
 #include "Outcomes.h"
-#include "DoublesSplits.h"
-#include "ErrorCatching.h"
+#include "Doubles.h"
+#include "ValidInputCheck.h"
 
 class Play
 {
 public:
     //Aiste's functions
     //player gets two cards, dealer gets 1. Order of the cards dealt: player -> dealer -> player.
-    void TheDeal(DoublesSplits doubles);
+    void TheDeal(Doubles doubles);
+    void Double();
     void PauseClear();
     void PlayerTurn();
     void DealerTurn();
@@ -28,13 +29,13 @@ public:
 
 private:
     
-    int bet;
+    int m_bet = 0;
     Cash m_cash;
     Deck m_deck;
     Score m_score;
     Dealer m_dealer;
     Player m_player;
     Outcomes m_outcome;
-    ErrorCatching m_error;
-    DoublesSplits m_doubles;
+    ValidInputCheck m_error;
+    Doubles m_doubles;
 };

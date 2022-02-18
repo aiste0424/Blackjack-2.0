@@ -2,7 +2,7 @@
 #include "Cash.h"
 #include "Deck.h"
 #include "Score.h"
-#include "ErrorCatching.h"
+#include "ValidInputCheck.h"
 
 class Player
 {
@@ -27,10 +27,8 @@ public:
 
 	void ResetScore(Score score);
 	void ResetCash();
-	void ShowCash();		//print m_totalCash value
 	
-	//===== Not used yet ======
-	int GetCash(Cash cash);
+	int GetCash();
 	int GetBet(Cash bet);
 	void MakeChoice(Deck& deck);
 
@@ -42,5 +40,5 @@ private:
 	Cash m_totalCash;
 	Deck m_deck;
 	Score m_score;
-	ErrorCatching m_error;
+	ValidInputCheck m_error;
 };

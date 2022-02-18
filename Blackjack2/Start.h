@@ -1,5 +1,5 @@
 #pragma once
-#include "ErrorCatching.h"
+#include "ValidInputCheck.h"
 //=================================
 //   MADE BY Simas Pauliukenas   //
 //=================================
@@ -13,6 +13,6 @@ public:
 private:
 
 	int m_start;
-	ErrorCatching m_error;
+	ValidInputCheck m_error;
 };
 

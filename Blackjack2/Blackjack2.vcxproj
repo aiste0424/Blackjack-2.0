@@ -143,8 +143,8 @@
     <ClCompile Include="Cash.cpp" />
     <ClCompile Include="Dealer.cpp" />
     <ClCompile Include="Deck.cpp" />
-    <ClCompile Include="DoublesSplits.cpp" />
-    <ClCompile Include="ErrorCatching.cpp" />
+    <ClCompile Include="Doubles.cpp" />
+    <ClCompile Include="ValidInputCheck.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Outcomes.cpp" />
     <ClCompile Include="Play.cpp" />
@@ -157,8 +157,8 @@
     <ClInclude Include="Cash.h" />
     <ClInclude Include="Dealer.h" />
     <ClInclude Include="Deck.h" />
-    <ClInclude Include="DoublesSplits.h" />
-    <ClInclude Include="ErrorCatching.h" />
+    <ClInclude Include="Doubles.h" />
+    <ClInclude Include="ValidInputCheck.h" />
     <ClInclude Include="Outcomes.h" />
     <ClInclude Include="Play.h" />
     <ClInclude Include="Player.h" />

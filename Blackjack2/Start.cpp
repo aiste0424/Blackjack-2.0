@@ -14,7 +14,7 @@ void Start::ShowIntroduction()
     std::cout << std::endl;
     std::cout << "             ||==========================================================================================||\n";
     std::cout << "             ||                                     Welcome to BLACKJACK                                 ||\n";
-    std::cout << "             ||            Will you win against me or lose ? Only one way to find out...                 ||\n";
+    std::cout << "             ||            Will you win against me or lose? Only one way to find out...                 ||\n";
     std::cout << "             ||==========================================================================================||\n";
     std::cout << "||================================================================================================================||\n";
     std::cout << "      \\________/                                                                                    \\________/" << std::endl; 
@@ -25,9 +25,9 @@ void Start::ShowIntroduction()
     std::cout << "       | |||| |                                                                                      | |||| |\n";
     std::cout << "       | |||| |    An ace is worth 1 or 11. Face cards are 10 and any other card is its pip value    | |||| |\n";
     std::cout << "       | |||| |                                                                                      | |||| |\n";
-    std::cout << "       | |||| |              First two cards giving a count of 21 are called 'blackjack'             | |||| |\n";
+    std::cout << "       | |||| |     If the first two cards add to the value of 21, it's a blackjack, instant win.    | |||| |\n";
     std::cout << "       | |||| |                                                                                      | |||| |\n";
-    std::cout << "       | |||| |                Dealer must take a card until the total is 17 or more                 | |||| |\n";
+    std::cout << "       | |||| |                  Dealer must take a card until the value is 17.                      | |||| |\n";
     std::cout << "       |_||||_|                                                                                      |_||||_|\n";
     std::cout << "      /        \\                                                                                    /        \\ \n";
     std::cout << "||================================================================================================================||\n\n\n";

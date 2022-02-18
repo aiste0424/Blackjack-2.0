@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 //=====================
 //   MADE BY Simas   //
 //=====================
@@ -13,24 +14,19 @@ public:
 
 	int GetCash();  //to make total cash appear on screen
 	int GetBet(); //get a value of the current bet
-
-	void PrintCash(); //to print your total on screen
-	void PrintBet();  //to print your current bet on screen
 	
 	void WinCash(); // add bet value to total
 	void LoseCash(); // reduces amount of coins at the end of a hand if lost
 	void BlackjackPay();
 	
 	void ResetCash(); //replayability purposes
-	void UpdateBet(); //updating bet in case of split or double	
+	void DoubleBet();
 	void UpdateBJ();
-
-	//void UpdateBetValue(); //maybe needed if doubled ???
-	bool ValidBet();
 
 private:
 
-	int m_maxBet;
 	int m_bets;	
+	int m_maxBet;
 	int m_totalCash;
+	const int m_doubleBet = 2; //when player doubles their bet
 };

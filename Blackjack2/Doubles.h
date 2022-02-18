@@ -11,27 +11,22 @@
 //      MADE BY Gergo Varga      //
 //=================================
 
-class DoublesSplits
+class Doubles
 {
 public:
 
-	DoublesSplits();
-
-	void DoubleDown(Player player, Dealer dealer, Score score, Cash cash);
-	void Split(Player player, Score score);
-
+	Doubles();
 	bool IsDouble();
-	bool IsSplit();
+	void DoubleDown(Player* player, Score score, Cash cash);
 
 private:
 
+	bool m_split;
 	int m_choice;
 	bool m_doubleDown;
-	bool m_split;
 
+	Deck m_deck;
 	Score m_score;
 	Player m_player;
-	Deck m_deck;
-	ErrorCatching m_error;
-
+	ValidInputCheck m_error;
 };

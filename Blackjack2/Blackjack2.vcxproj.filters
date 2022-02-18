@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Extras">
       <UniqueIdentifier>{248d304b-54c7-41df-89d0-fe6e7dae5376}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Mechanics">
+      <UniqueIdentifier>{b0319c2c-dd7b-438c-8526-bfd49df05096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Mechanics">
+      <UniqueIdentifier>{3abde57b-ca80-4ea0-bccd-794fd7f82745}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Play.cpp">
@@ -41,12 +47,6 @@
     </ClCompile>
     <ClCompile Include="Cards.cpp">
       <Filter>Source Files\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="ErrorCatching.cpp">
-      <Filter>Source Files\Extras</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files\Core</Filter>
@@ -60,14 +60,20 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Outcomes.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="DoublesSplits.cpp">
+    <ClCompile Include="ValidInputCheck.cpp">
       <Filter>Source Files\Extras</Filter>
     </ClCompile>
+    <ClCompile Include="Outcomes.cpp">
+      <Filter>Source Files\Mechanics</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Source Files\Mechanics</Filter>
+    </ClCompile>
     <ClCompile Include="Cash.cpp">
-      <Filter>Source Files\Core</Filter>
+      <Filter>Source Files\Mechanics</Filter>
+    </ClCompile>
+    <ClCompile Include="Doubles.cpp">
+      <Filter>Source Files\Mechanics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,12 +86,6 @@
     <ClInclude Include="Cards.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="ErrorCatching.h">
-      <Filter>Header Files\Extras</Filter>
-    </ClInclude>
     <ClInclude Include="Deck.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
@@ -95,14 +95,20 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Outcomes.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="DoublesSplits.h">
+    <ClInclude Include="ValidInputCheck.h">
       <Filter>Header Files\Extras</Filter>
     </ClInclude>
+    <ClInclude Include="Outcomes.h">
+      <Filter>Header Files\Mechanics</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Header Files\Mechanics</Filter>
+    </ClInclude>
     <ClInclude Include="Cash.h">
-      <Filter>Header Files\Core</Filter>
+      <Filter>Header Files\Mechanics</Filter>
+    </ClInclude>
+    <ClInclude Include="Doubles.h">
+      <Filter>Header Files\Mechanics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
